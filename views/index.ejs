@@ -1,0 +1,330 @@
+    <!-- 메인시작 -->
+    <main>
+        <!-- 메인비쥬얼 스와이퍼 -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiper-slide_img1"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-slide_img2"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-slide_img3"></div>
+                </div>
+            </div>
+            <!-- 피그네이션 오른쪽 -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+              direction: "horizontal",
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+              },
+            });
+        </script>
+
+        <!-- 섹션1 공지,행사안내 섹션 -->
+        <section class="sec1_mboard">
+            <div class="mboard_inner w1100">
+                <div class="notice">
+                    <h1 class="pont20">공지사항</h1>
+                    <ul class="n_cont pont14">
+                        <li><a href="">서문야시장 추석 일정 공지</a></li>
+                        <li><a href="">9월 5일 서문야시장 임시휴장</a></li>
+                        <li><a href="">서문야시장 푸드트럭 셀러 모집</a></li>
+                    </ul>
+                    <a href="/notice" class="n_more pont12">MORE</a>
+                </div>
+                <div class="e_info">
+                    <h1 class="pont20">행사안내</h1>
+                    <ul class="info_cont pont14">
+                        <li><a href="">[행사안내] 서문야시장 상설무대 공연안내 05 07일</a></li>
+                        <li><a href="">[행사안내] 서문야시장 상설무대 공연안내 05월 06일</a></li>
+                        <li><a href="">[행사안내] 서문야시장 상설무대 공연안내 05월 01일</a></li>
+                    </ul>
+                    <a href="" class="info_more pont12">MORE</a>
+                </div>
+            </div>
+        </section>
+        <!-- 섹션2 시장안내 메뉴 섹션 -->
+        <section class="sec2_menulist">
+            <div class="menulist_inner w1100">
+                <ul>
+                    <li class="menu menu1">
+                        <div class="under_bg">
+                            <a href="">
+                                <div class="menu_txt_wrap">
+                                    <h1>야시장안내</h1>
+                                    <p>
+                                        밤마다 펼쳐지는<br>
+                                        버라이어티한 세상!
+                                    </p>   
+                                </div>
+                                <span class="mask"></span>
+                            </a>
+                        </div>
+                        <div id="side_menu1" class="side_menu w1100">
+                            <div class="s_m_title">
+                                <h1>시장안내</h1>
+                                <a href="" class="s_m_more">더 알아보기</a>
+                            </div>
+                            <ul class="s_m_con">
+                                <li class="list1">
+                                    <strong>夜한 테마파크!</strong>
+                                    <p>
+                                        총거리 350M에 달하는<br> 
+                                        대형 야시장입니다
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Night Party</strong>
+                                    <p>
+                                        다양한 볼거리, 살거리가<br>
+                                        즐비합니다.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu menu2">
+                        <div class="under_bg">
+                            <a href="">
+                                <div class="menu_txt_wrap">
+                                    <h1>야시장안내</h1>
+                                    <p>
+                                        밤마다 펼쳐지는<br>
+                                        버라이어티한 세상!
+                                    </p>   
+                                </div>
+                                <span class="mask"></span>
+                            </a>
+                        </div>
+                        <div id="side_menu2" class="side_menu w1100">
+                            <div class="s_m_title">
+                                <h1>야시장안내</h1>
+                                <a href="" class="s_m_more">더 알아보기</a>
+                            </div>
+                            <ul class="s_m_con">
+                                <li class="list2">
+                                    <strong>夜한 테마파크!</strong>
+                                    <p>
+                                        총거리 350M에 달하는<br> 
+                                        대형 야시장입니다
+                                    </p>
+                                </li>
+                                <li class="list2">
+                                    <strong>Night Party</strong>
+                                    <p>
+                                        다양한 볼거리, 살거리가<br>
+                                        즐비합니다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>夜한 테마파크!</strong>
+                                    <p>
+                                        총거리 350M에 달하는<br> 
+                                        대형 야시장입니다
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu menu3">
+                        <div class="under_bg">
+                            <a href="">
+                                <div class="menu_txt_wrap">
+                                    <h1>야시장안내</h1>
+                                    <p>
+                                        밤마다 펼쳐지는<br>
+                                        버라이어티한 세상!
+                                    </p>   
+                                </div>
+                                <span class="mask"></span>
+                            </a>
+                        </div>
+                        <div id="side_menu3" class="side_menu w1100">
+                            <div class="s_m_title">
+                                <h1>야시장안내</h1>
+                                <a href="" class="s_m_more">더 알아보기</a>
+                            </div>
+                            <ul class="s_m_con">
+                                <li class="list3">
+                                    <strong>夜한 테마파크!</strong>
+                                    <p>
+                                        총거리 350M에 달하는<br> 
+                                        대형 야시장입니다
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Night Party</strong>
+                                    <p>
+                                        다양한 볼거리, 살거리가<br>
+                                        즐비합니다.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu menu4">
+                        <div class="under_bg">
+                            <a href="">
+                                <div class="menu_txt_wrap">
+                                    <h1>야시장안내</h1>
+                                    <p>
+                                        밤마다 펼쳐지는<br>
+                                        버라이어티한 세상!
+                                    </p>   
+                                </div>
+                                <span class="mask"></span>
+                            </a>
+                        </div>
+                        <div id="side_menu4" class="side_menu w1100">
+                            <div class="s_m_title">
+                                <h1>야시장안내</h1>
+                                <a href="" class="s_m_more">더 알아보기</a>
+                            </div>
+                            <ul class="s_m_con">
+                                <li class="list4">
+                                    <strong>夜한 테마파크!</strong>
+                                    <p>
+                                        총거리 350M에 달하는<br> 
+                                        대형 야시장입니다
+                                    </p>
+                                </li>
+                                <li class="list4">
+                                    <strong>Night Party</strong>
+                                    <p>
+                                        다양한 볼거리, 살거리가<br>
+                                        즐비합니다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>夜한 테마파크!</strong>
+                                    <p>
+                                        총거리 350M에 달하는<br> 
+                                        대형 야시장입니다
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <script src="js/section2.js"></script>
+        <!-- 섹션3 포토 갤러리 시작 -->
+        <section class="sec3_photo">
+            <div class="photo_inner w1100">
+                <div class="m_photo_tit">
+                    <p>PHOTO GALLERLY</p>
+                </div>
+                <div class="photo_list mySwiper2">
+                    <div class="swiper-wrapper photo_swiper_wrap">
+                        <div class="swiper-slide photo_slide"><a class="photo" href=""><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></a></div>
+                        <div class="swiper-slide photo_slide"><a class="photo" href=""><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049839_2059_600x450.jpg" alt=""></a></div>
+                        <div class="swiper-slide photo_slide"><a class="photo" href=""><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496050101_4032_600x450.jpg" alt=""></a></div>
+                        <div class="swiper-slide photo_slide"><a class="photo" href=""><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></a></div>
+                        <div class="swiper-slide photo_slide"><a class="photo" href=""><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></a></div>
+                        <div class="swiper-slide photo_slide"><a class="photo" href=""><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496050101_4032_600x450.jpg" alt=""></a></div>
+                        <div class="swiper-slide photo_slide"><a class="photo" href=""><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049839_2059_600x450.jpg" alt=""></a></div>
+                        <div class="swiper-slide photo_slide"><a class="photo" href=""><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></a></div>
+                    </div>
+                    <div class="nexpre_wrap">
+                        <div class="btn_prev">
+                            <img src="img/btn_mphoto_prev.gif" alt="">
+                        </div>
+                        <div class="btn_next">
+                            <img src="img/btn_mphoto_next.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="photo_tit">
+                    <h2>포토갤러리</h2>
+                    <p>
+                         서문야시장 활동사진을<br>
+                         확인 하실 수 있습니다.
+                    </p>
+                    <a href="" class="p_more">더보기</a>
+                </div>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper2", {
+              slidesPerView: 4,
+              spaceBetween: 0,
+              navigation: {
+                nextEl: ".btn_next",
+                prevEl: ".btn_prev",
+            },
+            });
+        </script>
+        <!-- 섹션 4 서비스 메뉴 시작  -->
+        <section class="service_menu">
+            <ul class="service_list w1100">
+                <li><a class="se_li1" href="">
+                    <strong>비대면주문서비스</strong>
+                    <p>코로나 극복을 위한 비대면 서비스</p>
+                </a></li>
+                <li><a class="se_li2" href="">
+                    <strong>주변관광지</strong>
+                    <p>야시장 주변 관광명소</p>
+                </a></li>
+                <li><a class="se_li3" href="">
+                    <strong>오시는길</strong>
+                    <p>서문시장 오시는 길을 안내 합니다</p>
+                </a></li>
+                <li><a class="se_li4" href="">
+                    <strong>문의 및 제안</strong>
+                    <p>궁금하신 사항이나 제한사항 문의</p>
+                </a></li>
+            </ul>
+        </section>
+        <!-- 섹션5 배너 시작 -->
+        <section class="banner">
+            <ul class="banner_inner w1100">
+                <li>
+                    <h2>매대 운영자 상시 모집</h2>
+                    <p>전국 대표야시장 서문야시장! 꿈과 열정을 펼칠 운영자
+                        를 모집 합니다.
+                    </p>
+                    <div class="appli_box">
+                        <a href="">
+                            <p>신청하기</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <h2>프리마켓셀러 모집</h2>
+                    <p>글로벌하게 먹고, 마시고, 즐길 수 있는 No.1 야시장에
+                        서 셀러를 모집합니다.                        
+                    </p>
+                    <div class="appli_box">
+                        <a href="">
+                            <p>신청하기</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- 섹션 6 패밀리 사이트 시작 -->
+        <section class="fam_banner">
+            <ul class="fbanner_inner w1100">
+                <li><a href=""><img src="img/footer_banner01.jpg" alt=""></a></li>
+                <li><a href=""><img src="img/footer_banner02.jpg" alt=""></a></li>
+                <li><a href=""><img src="img/footer_banner03.jpg" alt=""></a></li>
+                <li><a href=""><img src="img/footer_banner04.jpg" alt=""></a></li>
+                <li><a href=""><img src="img/footer_banner05.jpg" alt=""></a></li>
+            </ul>
+        </section>
+    </main>

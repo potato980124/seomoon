@@ -1,0 +1,40 @@
+    <!-- 로그인 메인시작 -->
+    <main>
+        <!-- 로그인 섹션 시작 -->
+        <section class="login">
+            <div class="loginall_wrap">
+                <ul class="login_type">
+                    <li>식품셀러 로그인</li>
+                    <li>프리마켓셀러 로그인</li>
+                </ul>
+                <form class="login_input" method="post" action="/loginInfo">
+                    <div class="login_wrap">
+                        <ul class="login_id">
+                            <li><img src="img/user.png" alt=""></li>
+                            <li class="input_box"><input type="text" name="id"></li>
+                            <li class="delete">
+                                <button type="reset">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="login_pw">
+                            <li><img src="img/padlock.png" alt=""></li>
+                            <li class="input_box"><input type="text" name="pw"></li>
+                            <li class="delete">
+                                <button type="reset">
+                                    <img src="img/delete.png" alt="">
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="login_btn" type="submit">로그인</button>
+                </form>
+                <ul class="log_under_menu">
+                    <li><a href="">비밀번호 찾기</a></li>
+                    <li><a href="">아이디 찾기</a></li>
+                    <li><a href="/join">회원가입</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>

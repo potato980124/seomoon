@@ -1,0 +1,190 @@
+/* 섹션1 메뉴 타이틀,메뉴바 시작 */
+.notice_menutitle{
+    padding-top: 60px; padding-bottom: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.introbg{
+    background-image: url(../img/night-market-671072_640.jpg);
+}
+
+.notice_menutitle>h2{
+    font-size: 35px; font-weight: bold;
+}
+.notice_menutitle>p{
+    font-size: 16px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.notice_menu{
+    height: 50px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+}
+.notice_menu>ul{
+    display: flex;
+    align-items: center;
+}
+.notice_menu>ul>li{
+    padding: 0 30px;
+}
+.notice_menu>ul>li:nth-child(2){
+    border-left: 1px solid #808080; border-right: 1px solid #808080 ;
+}
+.notice_menu>ul>li:nth-child(4){
+    border-left: 1px solid #808080; border-right: 1px solid #808080 ;
+}
+.notice_menu>ul>li:nth-child(6){
+    border-left: 1px solid #808080;
+}
+.notice_menu>ul>li>a{
+    color: #808080;
+}
+.notice_menu>ul>li:nth-child(1)>a{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+
+
+/* 섹션2 공지사항 타이틀,리스트  */
+.notice_cont{
+    padding: 60px 0;
+    box-sizing: border-box;
+}
+.notice_con_title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.notice_con_title>h1{
+    font-size: 35px; font-weight: bold;
+    color: #885A2A;
+}
+.notice_con_title>ul{
+    display: flex;
+    align-items: center;
+}
+.homepage{
+    width: 25px; height: 25px;
+    background-image: url(../img/icon_home.gif);
+}
+.location{
+    margin-left: 19px;
+    font-size: 14px;
+    padding-left: 19px;
+    box-sizing: border-box;
+    background-image: url(../img/bg_location_arr.gif);
+    background-repeat: no-repeat;
+    background-position: left center;   
+}
+
+/* 리스트 시작 */
+.notice_list{
+    margin-bottom: 20px;
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+thead td{
+    padding: 15px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #5b5b5b;     
+    border-top: 1px solid #e5e5e5;     
+}
+tbody td{
+    padding: 15px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 버튼메뉴 */
+.not_box_wrap{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 35px;
+}
+.not_box_wrap>div>a{
+    padding: 10px 20px;
+    background-color: #7E7E7E;
+    color: #fff;
+    font-size: 14px;
+}
+.not_li_box{
+    margin-left: 10px;
+}
+
+/* 목록 번호박스 */
+.n_numbox_wrap{
+    margin-bottom: 25px;
+}
+.n_numbox_wrap>ul{
+    display: flex;
+    justify-content: center;
+}
+.n_numbox_wrap>ul>li>a{
+    font-size: 11px;
+    padding: 5px 9px;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+}
+
+/* 검색박스 */
+.n_search_wrap{
+    display: flex;
+    justify-content: center;
+}
+form>ul{
+    display: flex;
+}
+form>ul>li:nth-child(2){
+    margin: 0 10px;
+}
+
+
+#tc_search_box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    width: 70px; height: 40px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    padding: 0 10px; 
+}
+#tc_search_box>select{
+    all: unset;
+    background-image: url(../img/se_arrow.gif);
+    background-repeat: no-repeat;
+    background-position: right center; 
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+#no_input_box{
+    width: 200px; height: 40px;
+    border: 1px solid #e5e5e5;
+}
+#no_input_box>input{
+    width: 100%; height: 100%;
+    border: 0;
+}
+#no_search_box{
+    width: 40px; height: 40px;
+}
+#no_search_box>button{
+    width: 100%; height: 100%;
+    background-image: url(/img/search_bt.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border: 0;
+}
+#no_search_box>button>img{
+    display: block;
+    width: 100%; height: 100%;
+}

@@ -1,0 +1,94 @@
+/* 섹션1 메뉴 타이틀,메뉴바 시작 */
+.intro_menutitle{
+    padding-top: 60px; padding-bottom: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.introbg{
+    background-image: url(../img/night-market-671072_640.jpg);
+}
+
+.intro_menutitle>h2{
+    font-size: 35px; font-weight: bold;
+}
+.intro_menutitle>p{
+    font-size: 16px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.intro_menu{
+    height: 50px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+}
+.intro_menu>ul{
+    display: flex;
+    align-items: center;
+}
+.intro_menu>ul>li{
+    padding: 0 30px;
+}
+.intro_menu>ul>li:nth-child(2){
+    border-left: 1px solid #808080; border-right: 1px solid #808080 ;
+}
+.intro_menu>ul>li>a{
+    color: #808080;
+}
+.intro_menu>ul>li:nth-child(1)>a{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+
+/* 섹션2 야시장 소개 시작  */
+.guidecont{
+    padding: 60px 0;
+    box-sizing: border-box;
+}
+.guide_con_title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.guide_con_title>h1{
+    font-size: 35px; font-weight: bold;
+    color: #885A2A;
+}
+.guide_con_title>ul{
+    display: flex;
+    align-items: center;
+}
+.homepage{
+    width: 25px; height: 25px;
+    background-image: url(../img/icon_home.gif);
+}
+.location{
+    margin-left: 19px;
+    font-size: 14px;
+    padding-left: 19px;
+    box-sizing: border-box;
+    background-image: url(../img/bg_location_arr.gif);
+    background-repeat: no-repeat;
+    background-position: left center;   
+}
+
+
+.guide_con{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding-bottom: 60px;
+ box-sizing: border-box;  
+}
+.guide_text>h1{
+ font-size: 30px; font-weight: bold;
+ padding-bottom: 30px;
+}
+.guide_text>p{
+    font-size: 15px; 
+}

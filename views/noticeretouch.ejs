@@ -1,0 +1,68 @@
+    <main>
+        <!-- 섹션1 메뉴 타이틀,메뉴바 시작 -->
+        <div class="menubar">
+            <div class="notice_menutitle introbg">
+                <h2>참여마당</h2>
+                <p>단순한 스트리트마켓이 아니다!글로벌하게 먹고, 마시고, 즐길 수 있는 대한민국 No.1 야시장</p>
+            </div>
+            <div class="notice_menu">
+                <ul>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">행사안내</a></li>
+                    <li><a href="">현장스케치</a></li>
+                    <li><a href="">언론보도</a></li>
+                    <li><a href="">문의 및 제안</a></li>
+                    <li><a href="">입점신청</a></li>
+                </ul>
+            </div>
+        </div>
+         <!-- 섹션2 야시장 공지사항 타이틀,게시판시작 -->
+         <section class="notice_cont w1100">
+            <div class="notice_con_title">
+                <h1>공지사항 수정</h1>
+                <ul>
+                    <li class="homepage"></li>
+                    <li class="location">참여마당</li>
+                    <li class="location">공지사항<li>
+                    <li class="location">수정<li>
+                </ul>
+            </div>
+            <!-- 공지사항 등록 컨텐츠 시작 -->
+            <div class="noti_regis_wrap">
+                <form action="/noticeretouch" method="post">
+                    <div class="regis_title">
+                        <label>제목</label>
+                        <ul class="regis_title_con">
+                            <li class="important_box"><input type="checkbox" name="impo">&nbsp;&nbsp;중요</li>
+                            <li class="reg_tit_box"><input type="text" name="title"></li>
+                        </ul>
+                    </div>
+                    <div class="regis_exposure">
+                        <label>메인노출</label>
+                        <ul class="regis_exposure_con">
+                            <li><input type="checkbox" name="exposure">&nbsp;&nbsp;설정함</li>
+                        </ul>
+                    </div>
+                    <div class="regis_author">
+                        <label>작성자</label>
+                        <ul class="regis_author_con">
+                            <li><input type="text" name="author"></li>
+                        </ul>
+                        <label>비밀번호</label>
+                        <ul class="regis_author_con">
+                            <li><input type="text" name="authorpw"></li>
+                        </ul>
+                    </div>
+                    <div class="regis_con">
+                        <label>내용</label>
+                        <ul class="regis_con_box">
+                            <li><textarea name="notcon" id=""></textarea></li>
+                        </ul>
+                    </div>
+                    <div class="regis_sub_btn">
+                        <button type="submit">수정하기</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
