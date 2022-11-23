@@ -591,7 +591,6 @@ header{
 .banner_wrap{
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 .b_img{
     width: 10%;
@@ -599,9 +598,12 @@ header{
 .b_img>img{
     height: 90px;
 }
-.b_title_box{
-    width: 60%;
+.b_con_wrap{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
 }
+
 .b_title_box>p{
     font-size: 20px; color: #fff; font-weight: bold;
 }
