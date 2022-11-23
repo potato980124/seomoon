@@ -561,41 +561,7 @@ header{
     color: #888;
 }
 /* 섹션5 배너 시작 */
-.banner{
-    height: 261px;
-    background-color: #373131;
-    display: flex;
-    align-items: center;
-    margin-bottom: 80px;
-}
-.banner_inner{
-    display: flex;
-    justify-content: space-between;
-}
-.banner_inner>li{
-    width: calc(50% - 50px);
-}
-.banner_inner>li>h2{
-    color: #fff;
-    font-size: 30px; font-weight: bold;
-}
-.banner_inner>li>p{
-    margin-top: 10px;
-    color: #fff;
-    font-size: 20px; font-weight:100;
-}
-.appli_box{
-    margin-top: 40px;
-    width: 170px;
-    padding: 15px 25px;
-    box-sizing: border-box;
-    border: 1px solid #fff;
-}
-.appli_box>a{
-    display: flex;
-    justify-content: space-between;
-    color: #fff;
-}
+
 
 
 /* 섹션6 패밀리 사이트 시작 */
@@ -663,6 +629,9 @@ footer{
     .m_menu>img{
         width: 25px; height: 25px;
     }
+    /* 섹션5 배너 시작 */
+    
+    
 }
 
 @media(max-width:736px){
@@ -750,4 +719,8 @@ footer{
     .m_photo_tit>p{
         display: block;
     }
+
+
+    /* 섹션5 배너 시작 */
+   
 }
