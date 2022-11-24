@@ -35,3 +35,12 @@ $gnb.addEventListener('mouseover',()=>{
     $gnbBg.style.borderTop = '0';
 })
 
+//모바일 메뉴
+let $mBtn = document.querySelector('.m_menu_btn');
+let $mMenu = document.querySelector('.m_menu');
+let $main = document.querySelector('.mm_page');
+$mBtn.addEventListener('click',()=>{
+    console.log($main);
+    $mMenu.classList.toggle('m_menu_on');
+    $main.style.opacity = '0.5';
+})

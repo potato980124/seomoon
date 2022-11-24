@@ -113,11 +113,26 @@ header{
     z-index: 98;
 }
 /* 모바일 메뉴 */
+.m_menu_btn>img{
+    width: 60px;
+}
 .m_menu{
     display: none;
+    overflow: hidden;
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    overflow: hidden;
+    transform: translateX(100%);
+    width: 30%;height: 100%;
+    transition: all 800ms;
 }
 
-
+.m_menu_on{
+    display: block;
+    transform: translateX(0);
+    background-color: #888;
+}
 
 /* 메인시작 */
 .main_visual{
