@@ -450,7 +450,7 @@ header{
     width: 25%;height: 275px;
     z-index: 99;
     background-color: #ae8c68;
-    padding: 60px 40px 0 40px;
+    padding: 40px 40px 0 40px;
     box-sizing: border-box;
 }  
 .photo_tit>h2{
@@ -459,7 +459,7 @@ header{
     color: #fff;
 } 
 .photo_tit>p{
-    padding: 30px 0 45px 0;
+    padding: 20px 0 35px 0;
     box-sizing: border-box;
     color: #d7c6b4;
 }
