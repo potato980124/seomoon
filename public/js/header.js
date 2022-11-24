@@ -38,9 +38,13 @@ $gnb.addEventListener('mouseover',()=>{
 //모바일 메뉴
 let $mBtn = document.querySelector('.m_menu_btn');
 let $mMenu = document.querySelector('.m_menu');
-let $main = document.querySelector('.mm_page');
+let $blocker = document.querySelector('.mm_page_blocker');
+let $mmRemove = document.querySelector('.mm_remove');
 $mBtn.addEventListener('click',()=>{
-    console.log($main);
-    $mMenu.classList.toggle('m_menu_on');
-    $main.style.opacity = '0.5';
+    $mMenu.classList.add('m_menu_on');
+    $blocker.style.display = 'block';
+})
+$mmRemove.addEventListener('click',()=>{
+    $mMenu.classList.remove('m_menu_on');
+    $blocker.style.display = 'none';
 })
