@@ -7,9 +7,9 @@
     width: 1100px;
     margin: 0 auto;
 }
-body{
+.body{
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 /* 헤더시작 */
 header{
