@@ -515,62 +515,30 @@ header{
 
 
 /* 섹션3 포토 갤러리 시작 */
-.sec3_photo{
-    margin-bottom: 80px;
-}
-.photo_inner{
-    overflow: hidden;
-    position: relative;
-}
-.photo_tit{
-    position: absolute;
-    top: 0;
-    left: 25%;
-    width: 25%;height: 275px;
-    z-index: 99;
-    background-color: #ae8c68;
-    padding: 40px 40px 0 40px;
-    box-sizing: border-box;
-}  
-.photo_tit>h2{
-    font-size: 23px;
-    font-weight: bold;
-    color: #fff;
-} 
-.photo_tit>p{
-    padding: 20px 0 35px 0;
-    box-sizing: border-box;
-    color: #d7c6b4;
-}
-.p_more{
-    color: #fff;
-    font-size: 15px;
-    padding-right: 30px;
-    background-image: url(../img/btn_mphoto_more.png);
-    background-repeat: no-repeat;
-    background-position: right;
-}
-.photo>img{
-    width: 100%; height: 275px;
-}
-
-.nexpre_wrap{
-    display: flex;
-    bottom: 0;
-    left: calc(50% - 40px);
-    position: absolute;
-    z-index: 100;
-}
-.m_photo_tit>p{
-    display: none;
-    padding: 10px 0;
-    width: 25%;
-    margin: 0 auto;
-    font-weight: bold;
-    background-color: #ae8c68;
-    color: #fff;
-    text-align: center;
-}
+    .p_slides{
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    .p_slide{
+        position: relative;
+        left: 0;
+        width: 25%; height: 275px;flex-shrink: 0;
+        transition: left 1s;
+    }
+    .p_slide>img{
+        width: 100%; height: 100%;
+    }
+    .p_btn_wrap{
+        display: flex;
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%; bottom: 0;
+    }
+    .slide_btn>img{
+        display: block;
+    }
 
 /* 섹션 4 서비스 메뉴 시작 */
 .service_menu{
@@ -768,6 +736,7 @@ footer{
     }
     /* 섹션2 시장안내 메뉴섹션 */
     .sec2_menulist{
+        margin-bottom: 30px;
         padding: 20px 20px;
         box-sizing: border-box;
         width: 100%;height: auto;
@@ -810,18 +779,8 @@ footer{
         display: none;
     }
     /* 섹션3 포토 갤러리 시작 */
-    .photo>img{
-        width: 100%; height: auto;
-    }
-    .photo_tit{
-        display: none;
-    }
-    .nexpre_wrap{
-        display: none;
-    }   
-    .m_photo_tit>p{
-        display: block;
-    }
+    
+    
     /* 섹션 4 서비스 메뉴 시작 */
     .service_list{
         display: flex;
