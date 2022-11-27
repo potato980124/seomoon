@@ -199,42 +199,56 @@ header{
 }
 
 /* 메인시작 */
+
+/* 메인비주얼 시작 */
 .main_visual{
-    width: 100% !important;
+    width: 100%;
+    position: relative;
 }
-.swiper-slide>div{
-    width: 100%; height: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
+.main_visual_slides{
+    width: 100%;
+    position: relative;
+    left: 0;
+    opacity: 1;
+    display: flex;
+}
+
+.mv_slide{
+    width: 100%;height: 600px;
+    flex-shrink: 0;
+    background-size: 100% 100%;
     background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
 }
-.swiper-slide_img1{
+.mv_bg1{
     background-image: url(../img/main_b0.jpg);
 }
-.swiper-slide_img2{
+.mv_bg2{
     background-image: url(../img/main_b4.jpg);
 }
-.swiper-slide_img3{
+.mv_bg3{
     background-image: url(../img/main_b5.jpg);
 }
-/* 피그네이션 오른쪽 */
-.swiper-pagination{
+/* 피그네이션 버튼 */
+.mv_btn_wrap{
     position: absolute;
-    width: fit-content !important;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    top: 50%;
+    top: 50%; right: 1%;
     transform: translateY(-50%);
-    left: unset !important;
-    right: 10px !important;
 }
-.swiper-pagination-bullet{
-    background-color: inherit;
-    border: 5px solid #fff;
-    width: 20px; height: 20px;
+.mv_btn_wrap>li{
+    width: 15px; height: 15px;
+    border-radius: 20px;
+    border: 1px solid  #fff;
 }
+.mv_btn_wrap>li:nth-child(2){
+    margin: 20px 0;
+}
+.mv_btn_active{
+    background-color: #fff;
+}
+
+
 
 
 
@@ -515,26 +529,58 @@ header{
 
 
 /* 섹션3 포토 갤러리 시작 */
-    .p_slides{
-        display: flex;
+    .sec3_photo_wrap{
         overflow: hidden;
         position: relative;
+    }
+    .photo_title_box{
+        background-color: #ae8c68;
+        padding: 60px 40px 30px; box-sizing: border-box;
+        position: absolute;
+        left: 25%;
+        width: 25%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        z-index: 999;
+    }
+    .photo_title_box>h1{
+        color: #fff; font-weight: bold; font-size: 23px;
+    }
+    .photo_title_box>h4{
+        color: #d7c6b4;
+        font-size: 15px;
+    }
+    .p_more>a{
+        padding-right: 30px;
+        box-sizing: border-box;
+        background-image: url(../img/btn_mphoto_more.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        color: #fff;
+        font-size: 15px;
+    }
+    .p_slides{
+        display: flex;
         width: 100%;
+        position: relative;
+        left: 0;
+        transition: left 0.5s;
     }
     .p_slide{
         position: relative;
-        left: 0;
         width: 25%; height: 275px;flex-shrink: 0;
-        transition: left 1s;
     }
     .p_slide>img{
         width: 100%; height: 100%;
     }
     .p_btn_wrap{
         display: flex;
-        transform: translateX(-50%);
         position: absolute;
-        left: 50%; bottom: 0;
+        bottom: 0; left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
     }
     .slide_btn>img{
         display: block;

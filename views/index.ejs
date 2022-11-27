@@ -1,35 +1,19 @@
     <!-- 메인시작 -->
     <main>
         <!-- 메인비쥬얼 스와이퍼 -->
-        <div class="swiper mySwiper main_visual">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="swiper-slide_img1"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="swiper-slide_img2"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="swiper-slide_img3"></div>
-                </div>
+        <section class="main_visual">
+            <div class="main_visual_slides">
+                <div class="mv_slide mv_bg1"></div>
+                <div class="mv_slide mv_bg2"></div>
+                <div class="mv_slide mv_bg3"></div>
             </div>
-            <!-- 피그네이션 오른쪽 -->
-            <div class="swiper-pagination"></div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-              direction: "horizontal",
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-              },
-              autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-              },
-            });
-        </script>
+            <ul class="mv_btn_wrap">
+                <li class="mv_btn 1"></li>
+                <li class="mv_btn 2"></li>
+                <li class="mv_btn 3"></li>
+            </ul>
+        </section>
+        <script src="js/mainvisual.js"></script>
 
         <!-- 섹션1 공지,행사안내 섹션 -->
         <section class="sec1_mboard">
@@ -223,20 +207,27 @@
         <!-- 섹션3 포토 갤러리 시작 -->
         <section class="sec3_photo">
             <div class="sec3_photo_wrap w1100">
-                    <div class="p_slides">
-                        <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
-                        <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049839_2059_600x450.jpg" alt=""></div>
-                        <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
-                        <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
-                        <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
-                        <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
-                        <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
-                        <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
-                        <div class="p_btn_wrap">    
-                            <div class="p_prev_btn slide_btn"><img src="img/btn_mphoto_prev.gif" alt=""></div>
-                            <div class="p_next_btn slide_btn"><img src="img/btn_mphoto_next.gif" alt=""></div>
-                        </div>    
-                    </div>
+                <div class="photo_title_box">
+                    <h1>포토갤러리</h1>
+                    <h4>서문야시장 활동사진을<br>
+                        확인하실 수 있습니다.
+                    </h4>
+                    <div class="p_more"><a href="">더보기</a></div>
+                </div>
+                <div class="p_slides">
+                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
+                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049839_2059_600x450.jpg" alt=""></div>
+                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
+                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
+                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
+                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
+                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
+                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
+                </div>
+                <div class="p_btn_wrap">    
+                    <div class="p_prev_btn slide_btn"><img src="img/btn_mphoto_prev.gif" alt=""></div>
+                    <div class="p_next_btn slide_btn"><img src="img/btn_mphoto_next.gif" alt=""></div>
+                </div>   
             </div>
         </section>
         <script src="js/photo.js"></script>
