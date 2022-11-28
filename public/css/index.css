@@ -211,7 +211,6 @@ header{
     position: relative;
     left: 0;
     opacity: 1;
-    display: flex;
 }
 
 .mv_slide{
@@ -220,23 +219,30 @@ header{
     background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    transition: all 0.3s ease-in-out;
+    transition: all 1s;
 }
 .mv_bg1{
     background-image: url(../img/main_b0.jpg);
 }
 .mv_bg2{
+    position: absolute;
+    top: 0;
     background-image: url(../img/main_b4.jpg);
+    opacity: 0;
 }
 .mv_bg3{
+    position: absolute;
+    top: 0;
     background-image: url(../img/main_b5.jpg);
+    opacity: 0;
 }
 /* 피그네이션 버튼  */
 .mv_btn_wrap{
     position: absolute;
     top: 50%; 
     right: 1%; 
-     transform: translateY(-50%); 
+    transform: translateY(-50%);
+    z-index: 999; 
 }
 .mv_btn_wrap>li{
     width: 15px; height: 15px;
@@ -245,6 +251,9 @@ header{
 }
 .mv_btn_wrap>li:nth-child(2){
     margin: 20px 0;
+}
+.mv_btn{
+    transition: background-color 0.5s;
 }
 .mv_btn_active{
     background-color: #fff;
