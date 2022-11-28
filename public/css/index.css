@@ -204,6 +204,7 @@ header{
 .main_visual{
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 .main_visual_slides{
     width: 100%;
@@ -230,11 +231,12 @@ header{
 .mv_bg3{
     background-image: url(../img/main_b5.jpg);
 }
-/* 피그네이션 버튼 */
+/* 피그네이션 버튼  */
 .mv_btn_wrap{
     position: absolute;
-    top: 50%; right: 1%;
-    transform: translateY(-50%);
+    top: 50%; 
+    right: 1%; 
+     transform: translateY(-50%); 
 }
 .mv_btn_wrap>li{
     width: 15px; height: 15px;
@@ -247,6 +249,7 @@ header{
 .mv_btn_active{
     background-color: #fff;
 }
+
 
 
 
