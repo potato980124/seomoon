@@ -3,10 +3,15 @@ let $mvBtn = document.querySelectorAll('.mv_btn');
 let $mvBtnWrap = document.querySelector('.mv_btn_wrap');
 let mvSlideNum = 1;
 const stopI = setInterval(()=>{
+    $mvBtn.forEach((e)=>{
+        e.classList.remove('mv_btn_active');
+    })
     if(mvSlideNum <= $mvSlide.length - 1){
         $mvSlide[mvSlideNum].style.opacity = '1';
+        $mvBtn[mvSlideNum].classList.add('mv_btn_active');
         mvSlideNum++
     }else{
+        $mvBtn[0].classList.add('mv_btn_active');
         for(i = 1; i < $mvSlide.length;i++){
             $mvSlide[i].style.opacity = '0';
         }
