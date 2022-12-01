@@ -15,13 +15,11 @@ body{
 header{
  height: 100px;
  display: flex;
- justify-content: space-between;
  align-items: center;
  position: relative;
 }
 /* 로고 */
 .h_logo>a>img{
-    /* display: block; */
     height: 80px;
 }
 
@@ -31,7 +29,7 @@ header{
     align-items: center;
 }
 .h_login>img{
-    width: 50px;
+    width: 40px;
     position: relative;
 }
 .login_box{
@@ -53,7 +51,11 @@ header{
 }
 
 /* gnb메뉴 */
-
+.gnb{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
 .gnb>ul{
     display: flex;
     align-items: center;
@@ -219,7 +221,7 @@ header{
     background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    transition: all 1s;
+    transition: opacity 1s;
 }
 .mv_bg1{
     background-image: url(../img/main_b0.jpg);
@@ -500,13 +502,15 @@ header{
 .s_m_con>li{
     width: 50%;
     padding: 0 50px;
-    /* border-right: 1px solid rgba(0, 0, 0, 20%); */
 }
 .list1{
     border-right: 1px solid rgba(0, 0, 0, 20%);
 }
 .list2{
     border-right: 1px solid rgba(0, 0, 0, 20%);
+}
+.list2:nth-child(2){
+    border: 0;
 }
 .list3{
     border-right: 1px solid rgba(0, 0, 0, 20%);
@@ -526,9 +530,7 @@ header{
     padding-bottom: 20px;
     box-sizing: border-box;
 }
-/* #side_menu1{
-    display: none;
-} */
+
 #side_menu2{
     display: none;
 }
@@ -578,7 +580,7 @@ header{
         width: 100%;
         position: relative;
         left: 0;
-        transition: left 0.5s;
+        transition: left 0.4s ease-in-out;
     }
     .p_slide{
         position: relative;
@@ -600,7 +602,7 @@ header{
 
 /* 섹션 4 서비스 메뉴 시작 */
 .service_menu{
-    margin-bottom: 80px;
+    margin: 80px 0;
 }
 .service_list{
     display: flex;
@@ -644,25 +646,7 @@ header{
 
 
 
-/* 섹션5 패밀리 사이트 시작 */
-.fam_banner{
-    margin: 80px 0;
-}
-.fbanner_inner{
-    display: flex;
-    justify-content: space-between;
-}
-.fbanner_inner>li{
-    width: calc((100% - 200px)/5);
-}
-.fbanner_inner>li>a{
-    display: block;
-}
-.fbanner_inner>li>a>img{
-    display: block;
-    width: 100%; 
-}
-/* 섹션6 배너 시작 */
+/* 섹션5 배너 시작 */
 .banner{
     width: 100%;
     background-image: url(../img/bg_sns.gif);
@@ -695,6 +679,30 @@ header{
     border: 1px solid #fff;
     font-size: 18px; color: #fff;
 }
+
+
+/* 섹션6 패밀리 사이트 시작 */
+.fam_banner{
+    margin: 80px 0;
+}
+.fbanner_inner{
+    display: flex;
+    justify-content: space-between;
+}
+.fbanner_inner>li{
+    width: calc((100% - 200px)/5);
+}
+.fbanner_inner>li>a{
+    display: block;
+}
+.fbanner_inner>li>a>img{
+    display: block;
+    width: 100%; 
+}
+
+
+
+
 /* 푸터시작 */
 footer{
     background-color: #EEF4F4;
@@ -722,15 +730,15 @@ footer{
     .h_logo{
         margin: 0 auto;
     }
+    .h_logo>a>img{
+        height: 70px;
+    }
     .h_login{
         position: absolute;
         left: 15px;
     }
     .h_login>img{
-        width: 60px;
-    }
-    .h_logo>a>img{
-        height: 100px;
+        width: 40px;
     }
     .login_box{
         display: none;
@@ -739,7 +747,11 @@ footer{
         display: block;
     }
     .m_menu_btn>img{
-        width: 40px; /* height: 25px; */
+        width: 30px; 
+    }
+    /* 메인비쥬얼 시작 */
+    .mv_slide{
+        width: 100%;height: 400px;
     }
     /* 섹션5 배너 시작 */
     
@@ -752,7 +764,7 @@ footer{
         height: 70px;
      }
     .h_logo>a>img{
-        height: 50px;
+        height: 60px;
     }
     .h_login>img{
         width: 30px;
@@ -761,8 +773,8 @@ footer{
         width: 30px; 
     }
     /* 메인비쥬얼 */
-    .swiper-slide>div{
-        height: 350px;
+    .mv_slide{
+        width: 100%;height: 350px;
     }
     /* 공지사항 공통 */
     .pont20{
@@ -818,6 +830,7 @@ footer{
         text-align: center;
     }
     .menu_txt_wrap>h1{
+        font-size: 17px;
         padding-top: 0;
         line-height: 150px;
     }
@@ -828,7 +841,9 @@ footer{
         display: none;
     }
     .under_bg {
-        height: auto;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 50%);
+        background-image: none;
     }
     .under_bg>a{
         padding: 0;

@@ -2,32 +2,36 @@ let $pSlide = document.querySelectorAll('.p_slide');
 let $pSlides = document.querySelector('.p_slides');
 let nextBtn = document.querySelector('.p_next_btn');
 let preBtn = document.querySelector('.p_prev_btn');
-let currSlide = 1;
-let photoPx = $pSlide[0].clientWidth;
-let maxSlide = $pSlide.length; 
+let currSlide = 0;
+let photoWidth = $pSlide[0].clientWidth;
+let slideCount = $pSlide.length; 
+console.log(photoWidth);
 
-
-
-
-
-function nextMove(){
-    currSlide++
-    if(currSlide <= (maxSlide - 3)){
-        let leftPx = (currSlide-1)*photoPx;
-    $pSlides.setAttribute('style',`left:${-leftPx}px`);
-    }else{
-        currSlide = maxSlide-3;
+makeClone();
+function makeClone(){
+    for(let i =0; i< slideCount;i++){
+        let cloneSlide = $pSlide[i].cloneNode(true);
+        $pSlides.appendChild(cloneSlide);
     }
-}
-function preMove(){
-    currSlide--
-    if(currSlide <= (maxSlide - 3) && currSlide > 0){
-        let leftPx = (currSlide-1)*photoPx;
-    $pSlides.setAttribute('style',`left:${-leftPx}px`);
-    }else{
-        currSlide = 0;
+    for(let i = slideCount-1; i>=0; i--){
+        let cloneSlide = $pSlide[i].cloneNode(true);
+        $pSlides.prepend(cloneSlide);
     }
+    updateWidth();
+    setTrans();
 }
+
+function updateWidth(){
+    let nowSlidesWidth = 100;
+    $pSlides.style.width = `${nowSlidesWidth}%`;
+}
+function setTrans(){
+    let transLateVlue = -(photoWidth*slideCount);
+    $pSlides.style.transform = `translateX(${transLateVlue}px)`;
+}
+
+
+
 
 
 nextBtn.addEventListener('click',()=>{
@@ -36,3 +40,27 @@ nextBtn.addEventListener('click',()=>{
 preBtn.addEventListener('click',()=>{
     preMove();
 })
+
+
+
+function nextMove(){
+    moveSlide(currSlide + 1);
+}
+function preMove(){
+    moveSlide(currSlide - 1);
+}
+
+function moveSlide(num){
+    $pSlides.style.left = -num*photoWidth+'px';
+    currSlide = num;
+    if(currSlide == slideCount || currSlide == -slideCount){
+        setTimeout(() => {
+            $pSlides.style.transition = 'none';
+            $pSlides.style.left = '0px';
+            currSlide = 0;
+        }, 500);
+        setTimeout(() => {
+            $pSlides.style.transition = 'left 0.5s';
+        }, 600);
+    }
+}

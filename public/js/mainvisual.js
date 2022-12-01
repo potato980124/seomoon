@@ -19,7 +19,6 @@ const stopI = setInterval(()=>{
     }
 },2500);
 
-console.log($mvBtn);
 $mvBtn.forEach((e)=>{
     e.addEventListener('click',(c)=>{
         clearInterval(stopI);
