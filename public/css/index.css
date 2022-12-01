@@ -588,6 +588,7 @@ header{
     }
     .p_slide>img{
         width: 100%; height: 100%;
+        -webkit-user-drag: none;
     }
     .p_btn_wrap{
         display: flex;
@@ -852,7 +853,13 @@ footer{
         display: none;
     }
     /* 섹션3 포토 갤러리 시작 */
-    
+    .photo_title_box{
+        left: 0;
+        width: 50%;
+    }
+    .p_slide{
+        width: 50%; 
+    }
     
     /* 섹션 4 서비스 메뉴 시작 */
     .service_list{

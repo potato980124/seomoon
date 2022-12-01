@@ -7,6 +7,7 @@ let photoWidth = $pSlide[0].clientWidth;
 let slideCount = $pSlide.length; 
 console.log(photoWidth);
 
+// 슬라이드 복제
 makeClone();
 function makeClone(){
     for(let i =0; i< slideCount;i++){
@@ -33,7 +34,7 @@ function setTrans(){
 
 
 
-
+// 슬라이드 버튼 구현
 nextBtn.addEventListener('click',()=>{
     nextMove();
 })
@@ -64,3 +65,20 @@ function moveSlide(num){
         }, 600);
     }
 }
+
+// 슬라이드 스크롤 구현
+
+let startDrag = 0;
+let endDrag =0;
+$pSlides.addEventListener('mousedown',(e)=>{
+    startDrag = e.pageX;
+})
+
+$pSlides.addEventListener('mouseup',(e)=>{
+    endDrag = e.pageX;
+    if(startDrag<endDrag){
+        preMove();
+    }else if(startDrag>endDrag){
+        nextMove();
+    }
+})
