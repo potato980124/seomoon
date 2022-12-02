@@ -461,7 +461,7 @@ header{
     background-color: #ffffff;
 }
 .menu_txt_wrap>p{
-    font-size: 18px; font-weight: 700;
+    font-size: 18px; font-weight: lighter;
     padding-bottom: 15px;
     color: #222222;
 }
@@ -654,19 +654,21 @@ header{
     background-size: contain;
 }
 .banner_wrap{
-    display: flex;
-    align-items: center;
     padding: 33px 0;
+    box-sizing: border-box;
+    position: relative;
 }
 .b_img{
-    width: 5%; 
+    position: absolute;
+    bottom: 0;
 }
 .b_img>img{
-    width: 100%;
+    display: block;
+    width: 70px;
 }
 .b_con_wrap{
-    width: 95%;
-    padding-left: 20px;
+    width: 100%;
+    padding-left: 100px;    
     box-sizing: border-box; 
     display: flex;
     justify-content: space-between;
@@ -675,6 +677,7 @@ header{
 .b_title_box>p{
     font-size: 20px; color: #fff; font-weight: bold;
 }
+
 .b_app_box>a{
     padding: 5px 10px;
     box-sizing: border-box;
@@ -756,6 +759,10 @@ footer{
         width: 100%;height: 400px;
     }
     /* 섹션5 배너 시작 */
+    .banner{
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
     
     
 }
@@ -861,7 +868,22 @@ footer{
     .p_slide{
         width: 50%; 
     }
-    
+    .photo_title_box>h1{
+        color: #fff; font-weight: bold; font-size: 17px;
+    }
+    .photo_title_box>h4{
+        font-size: 12px;
+    }
+    .p_more>a{
+        padding-right: 30px;
+        box-sizing: border-box;
+        background-image: url(../img/btn_mphoto_more.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        color: #fff;
+        font-size: 12px;
+        background-size: 12px;
+    }
     /* 섹션 4 서비스 메뉴 시작 */
     .service_list{
         display: flex;
@@ -876,18 +898,39 @@ footer{
     .se_li4{
         margin-top: 50px;
     }
-
-    /* 섹션6 배너 시작 */
+    .service_menu{
+        margin: 40px 0;
+    }
+    
+    .service_list>li>a>strong{
+        display: block;
+        padding-top: 90px;
+        padding-bottom: 15px;
+        color: #000000;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .service_list>li>a>p{
+        font-size: 12px;
+        color: #888;
+    }
+    /* 섹션5 배너 시작 */
    .b_con_wrap{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 40px;
+    padding: 60px 0 0;
+    box-sizing: border-box;
    }
    .b_app_box{
-    margin-top: 20px;
+    margin-top: 20px;   
+   }
+   .b_img{
+    top: 5%; left: 50%;
+    transform: translateX(-50%);
    }
    .b_img>img{
-    width: 100%;
+    display: block;
+    width: 70px;
 }
 }
