@@ -77,7 +77,7 @@ router.post('/noticewrite',(req,res)=>{
   console.log(notcon);
   db.insertMemo(
   title,impo,exposure,author,authorpw,notcon,()=>{
-    res.redirect('/');
+    res.redirect('/notice');
   });
 })
 router.get('/noticeretouch',(req,res)=>{
