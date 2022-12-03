@@ -48,111 +48,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <% rows.forEach((row,index) =>{ %> 
                             <tr>
-                                <td class="notice_info"><img src="img/notice_ic.gif" alt=""></td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
+                                <td class="notice_info"><%= row.id %></td>
+                                <td class="notice_info info_title"><a href="/detailsnotice"><%= row.noticeTitle %></a></td>
+                                <td class="notice_info"><%= row.author %></td>
+                                <td class="notice_info"><%= row.create_time %></td>
+                                <td class="notice_info"><%= row.joinNum %></td>
                             </tr>
-                            <tr>
-                                <td class="notice_info"><img src="img/notice_ic.gif" alt=""></td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info"><img src="img/notice_ic.gif" alt=""></td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info"><img src="img/notice_ic.gif" alt=""></td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">40</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">39</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">38</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">37</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">36</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">35</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">34</td>
-                                <td class="notice_info info_title"><a href=/detailsnotice"">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">33</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">32</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">31</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>
-                            <tr>
-                                <td class="notice_info">30</td>
-                                <td class="notice_info info_title"><a href="/detailsnotice">서문야시장 추석일정 공지</a></td>
-                                <td class="notice_info">마스터</td>
-                                <td class="notice_info">2022.04.12</td>
-                                <td class="notice_info">921</td>
-                            </tr>   
+                            <% }); %>
                         </tbody>
                     </table>
                 </div>

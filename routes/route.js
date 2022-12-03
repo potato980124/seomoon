@@ -3,7 +3,8 @@ const express = require('express');
 const { write } = require('fs');
 const router = express.Router();
 const path = require('path');
-const { title } = require('process');
+const db = require('./../db.js');
+
 
 router.get('/',(req,res)=>{
   res.render('index');
@@ -48,29 +49,36 @@ router.post('/joinInfo',(req,res)=>{
   console.log(userEmail);
 })
 router.get('/detailsnotice',(req,res)=>{
-  res.render('detailsnotice');
+    res.render('detailsnotice');
 })
 router.get('/notice',(req,res)=>{
-  res.render('notice');
+  db.getNotice((rows)=>{
+    res.render('notice',{rows:rows});
+  })
 })
 router.get('/noticeregis',(req,res)=>{
   res.render('noticeregis');
 })
-router.post('/noticeregis',(req,res)=>{
+
+// 공지사항 등록페이지에서 포스트로 받아온 값을 db 저장
+router.post('/noticewrite',(req,res)=>{
   let param = JSON.parse(JSON.stringify(req.body));
   let title = param['title'];
-  console.log(title);
   let impo = param['impo'];
-  console.log(impo);
   let exposure = param['exposure'];
-  console.log(exposure);
   let author = param['author'];
-  console.log(author);
   let authorpw = param['authorpw'];
-  console.log(authorpw);
   let notcon = param['notcon'];
+  console.log(title);
+  console.log(impo);
+  console.log(exposure);
+  console.log(author);
+  console.log(authorpw);
   console.log(notcon);
-  res.render('detailsnotice.ejs',{'data':param});
+  db.insertMemo(
+  title,impo,exposure,author,authorpw,notcon,()=>{
+    res.redirect('/');
+  });
 })
 router.get('/noticeretouch',(req,res)=>{
   res.render('noticeretouch');
