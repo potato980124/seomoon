@@ -48,14 +48,20 @@ router.post('/joinInfo',(req,res)=>{
   console.log(userSex);
   console.log(userEmail);
 })
+// 등록한 공지 세부사항
 router.get('/detailsnotice',(req,res)=>{
-    res.render('detailsnotice');
+  let id = req.query.id;
+  db.getNoticeByid(id,(row)=>{
+    res.render('detailsnotice',{row:row[0]});
+  })
 })
+// 등록한 공지 리스트
 router.get('/notice',(req,res)=>{
   db.getNotice((rows)=>{
     res.render('notice',{rows:rows});
   })
 })
+// 공지 등록 페이지
 router.get('/noticeregis',(req,res)=>{
   res.render('noticeregis');
 })
@@ -80,9 +86,13 @@ router.post('/noticewrite',(req,res)=>{
     res.redirect('/notice');
   });
 })
+
+// 공지사항 수정 페이지
 router.get('/noticeretouch',(req,res)=>{
   res.render('noticeretouch');
 })
+
+// 공지사항 수정값 db에 저장
 router.post('/noticeretouch',(req,res)=>{
   let param = JSON.parse(JSON.stringify(req.body));
   let title = param['title'];
@@ -98,6 +108,14 @@ router.post('/noticeretouch',(req,res)=>{
   let notcon = param['notcon'];
   console.log(notcon);
   res.render('detailsnotice.ejs',{'data':param});
+})
+//공지사항 리스트에서 쿼리 id로  삭제 할 때 
+router.get('/deleteNoticeList',(req,res)=>{
+  let id = req.query.id;
+  console.log(id);
+  db.deleteByid(id,()=>{
+    res.redirect('/notice');
+  })
 })
 module.exports = router;
 

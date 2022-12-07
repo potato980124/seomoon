@@ -37,6 +37,7 @@
                             <col width="100"> 
                             <col width="70"> 
                             <col width="50"> 
+                            <col width="50"> 
                         </colgroup>
                         <thead>
                             <tr>
@@ -50,8 +51,8 @@
                         <tbody>
                             <% rows.forEach((row,index) =>{ %> 
                             <tr>
-                                <td class="notice_info"><%= row.id %></td>
-                                <td class="notice_info info_title"><a href="/detailsnotice"><%= row.noticeTitle %></a></td>
+                                <td class="notice_info"><%= rows.length - index %></td>
+                                <td class="notice_info info_title"><a href="/detailsnotice?id=<%= row.id %>"><%= row.noticeTitle %></a></td>
                                 <td class="notice_info"><%= row.author %></td>
                                 <td class="notice_info"><%= row.create_time %></td>
                                 <td class="notice_info"><%= row.joinNum %></td>

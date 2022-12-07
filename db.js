@@ -13,14 +13,7 @@ connection.connect(function(err) {
 
 /* db에서 데이터 가져오는 함수 번호,제목,글쓴이,등록일,조회 */
 function getNotice(callback){
-    connection.query('SELECT*FROM noticelist ORDER BY id DESC',(err,rows)=>{
-        if(err) throw err;
-        callback(rows);
-    })
-};
-// 공지사항 등록후 공지사항 세부페이지에 가져올 데이터 함수
-function getNoticeDetail(callback){
-    connection.query('SELECT*FROM noticelist ORDER BY id DESC',(err,rows)=>{
+    connection.query('SELECT*FROM noticelist ORDER BY id desc',(err,rows)=>{
         if(err) throw err;
         callback(rows);
     })
@@ -34,8 +27,23 @@ function insertMemo(title,impo,exposure,author,authorpw,notcon,callback){
         callback();
     }    
 )}
+// 공지사항 등록후 공지사항 세부페이지에 가져올 데이터 함수 (id가 일치하는 데이터만 추출)
+function getNoticeByid(id,callback){
+    connection.query(`select*from noticelist where id=${id}`,(err,row)=>{
+        if(err) throw err;
+        callback(row);
+    })
+};
+// 공지사항 리스트에서 삭제 버튼 클릭 했을시 db 테이블에서 지울 함수
+function deleteByid(id,callback){
+    connection.query(`delete from noticelist where id=${id}`,(err)=>{
+        if (err) throw err;
+        callback();
+    })
+}
+
 
 module.exports = 
 {
-    getNotice,insertMemo,getNoticeDetail
+    getNotice,insertMemo,deleteByid,getNoticeByid
 };
