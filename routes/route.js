@@ -89,7 +89,10 @@ router.post('/noticewrite',(req,res)=>{
 
 // 공지사항 수정 페이지
 router.get('/noticeretouch',(req,res)=>{
-  res.render('noticeretouch');
+  let id = req.query.id;
+  db.getNoticeByid(id,(row)=>{
+    res.render('noticeretouch',{row:row[0]});
+  })
 })
 
 // 공지사항 수정값 db에 저장

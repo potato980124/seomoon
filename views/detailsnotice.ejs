@@ -31,11 +31,14 @@
                 <div class="details_cont">
                     <!-- 공지사항 타이틀 -->
                     <div class="det_con_title">
+                        <% let regisYear =  row.create_time.getFullYear();  %>
+                        <% let regisMonth =  row.create_time.getMonth()+1;  %>
+                        <% let regisDate =  row.create_time.getDate();  %>
                         <h1 class="det_title"><%= row.noticeTitle %></h1>
                         <ul class="det_info">
                             <li>
                                 <h2>작성일</h2>
-                                <span><%= row.create_time %></span>
+                                <span><%=regisYear%>년 <%= regisMonth%>월 <%=regisDate%>일</span>
                             </li>
                             <li>
                                 <h2>작성자</h2>
@@ -60,13 +63,13 @@
                     </div>
                     <ul class="adj_box_wrap">
                         <li class="not_li_box">
-                            <a href="/noticeretouch">수정</a>
+                            <input type="button" value="수정" onclick="javascript:location.href='/noticeretouch?id=<%= row.id %>'">
                         </li>
                         <li class="not_li_box">
-                            <a href="">삭제</a>
+                            <input type="button" value="삭제" onclick="javascript:location.href='/deleteNoticeList?id=<%= row.id %>'">
                         </li>
                         <li class="not_li_box">
-                            <a href="/notice">목록</a>
+                            <input type="button" value="목록" onclick="location.href='/notice'">
                         </li>
                     </ul>
                 </div>

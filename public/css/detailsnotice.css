@@ -139,8 +139,8 @@
     display: flex;
     gap: 10px;
 }
-.adj_box_wrap>li>a{
-    display: block;
+.adj_box_wrap>li>input{
+    border: 0;
     height: 36px;
     line-height: 36px;
     padding: 0 15px;

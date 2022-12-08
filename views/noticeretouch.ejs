@@ -34,7 +34,7 @@
                         <label>제목</label>
                         <ul class="regis_title_con">
                             <li class="important_box"><input type="checkbox" name="impo">&nbsp;&nbsp;중요</li>
-                            <li class="reg_tit_box"><input type="text" name="title"></li>
+                            <li class="reg_tit_box"><input type="text" name="title"><%= row.noticeTitle%></li>
                         </ul>
                     </div>
                     <div class="regis_exposure">
@@ -46,17 +46,17 @@
                     <div class="regis_author">
                         <label>작성자</label>
                         <ul class="regis_author_con">
-                            <li><input type="text" name="author"></li>
+                            <li><input type="text" name="author"><%= row.author%></li>
                         </ul>
                         <label>비밀번호</label>
                         <ul class="regis_author_con">
-                            <li><input type="text" name="authorpw"></li>
+                            <li><input type="text" name="authorpw"><%= row.authorPw%></li>
                         </ul>
                     </div>
                     <div class="regis_con">
                         <label>내용</label>
                         <ul class="regis_con_box">
-                            <li><textarea name="notcon" id=""></textarea></li>
+                            <li><textarea name="notcon"><%= row.noticeCon%></textarea></li>
                         </ul>
                     </div>
                     <div class="regis_sub_btn">
