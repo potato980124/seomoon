@@ -21,9 +21,9 @@
                 <div class="notice">
                     <h1 class="pont20">공지사항</h1>
                     <ul class="n_cont pont14">
-                        <li><a href="">서문야시장 추석 일정 공지</a></li>
-                        <li><a href="">9월 5일 서문야시장 임시휴장</a></li>
-                        <li><a href="">서문야시장 푸드트럭 셀러 모집</a></li>
+                        <% rows.forEach((row)=>{ %>
+                        <li><a href=""><%= row.noticeTitle%></a></li>
+                        <% });%>
                     </ul>
                     <a href="/notice" class="n_more pont12">MORE</a>
                 </div>

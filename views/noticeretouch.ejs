@@ -29,12 +29,13 @@
             </div>
             <!-- 공지사항 등록 컨텐츠 시작 -->
             <div class="noti_regis_wrap">
-                <form action="/noticeretouch" method="post">
+                <form action="/noticeretouchdata" method="post">
+                    <input type="hidden" name="id" value="<%= row.id %>">
                     <div class="regis_title">
                         <label>제목</label>
                         <ul class="regis_title_con">
                             <li class="important_box"><input type="checkbox" name="impo">&nbsp;&nbsp;중요</li>
-                            <li class="reg_tit_box"><input type="text" name="title"><%= row.noticeTitle%></li>
+                            <li class="reg_tit_box"><input type="text" name="title" value="<%= row.noticeTitle%>"></li>
                         </ul>
                     </div>
                     <div class="regis_exposure">
@@ -46,11 +47,11 @@
                     <div class="regis_author">
                         <label>작성자</label>
                         <ul class="regis_author_con">
-                            <li><input type="text" name="author"><%= row.author%></li>
+                            <li><input type="text" name="author" value="<%= row.author%>"></li>
                         </ul>
                         <label>비밀번호</label>
                         <ul class="regis_author_con">
-                            <li><input type="text" name="authorpw"><%= row.authorPw%></li>
+                            <li><input type="text" name="authorpw" value="<%= row.authorPw%>"></li>
                         </ul>
                     </div>
                     <div class="regis_con">

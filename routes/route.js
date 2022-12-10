@@ -7,7 +7,9 @@ const db = require('./../db.js');
 
 
 router.get('/',(req,res)=>{
-  res.render('index');
+  db.getNoticeAtMain((rows)=>{
+    res.render('index',{rows:rows});
+  })
 })
 router.get('/introsub',(req,res)=>{
   res.render('introsub');
@@ -19,8 +21,13 @@ router.post('/loginInfo',(req,res)=>{
   let param =JSON.parse(JSON.stringify(req.body));
   let id = param['id'];
   let pw = param['pw'];
-  console.log('userid:'+id);
-  console.log('userpw:'+pw);
+  db.loginCheck(id,pw,(results)=>{
+    if(results.length>0){
+      res.redirect('/');
+    }else{
+      res.send(`<script>alert('로그인 정보가 일치하지 않습니다.'); document.location.href='/login';</script>`)
+    }
+  })
 })
 router.get('/join',(req,res)=>{
   res.render('join');
@@ -31,22 +38,12 @@ router.post('/joinInfo',(req,res)=>{
   let userPw = param['pw'];
   let userRePw = param['repw'];
   let userName = param['name'];
-  let userYear = param['year'];
-  let userMonth = param['month'];
-  let userDate  = param['date'];
   let userNum = param['num'];
   let userSex = param['sex'];
   let userEmail = param['email'];
-  console.log(userId);
-  console.log(userPw);
-  console.log(userRePw);
-  console.log(userName);
-  console.log(userYear);
-  console.log(userMonth);
-  console.log(userDate);
-  console.log(userNum);
-  console.log(userSex);
-  console.log(userEmail);
+  db.insertJoinData(userId,userPw,userRePw,userName,userNum,userSex,userEmail,()=>{
+    res.redirect('/login');
+  })
 })
 // 등록한 공지 세부사항
 router.get('/detailsnotice',(req,res)=>{
@@ -61,6 +58,7 @@ router.get('/notice',(req,res)=>{
     res.render('notice',{rows:rows});
   })
 })
+
 // 공지 등록 페이지
 router.get('/noticeregis',(req,res)=>{
   res.render('noticeregis');
@@ -94,24 +92,21 @@ router.get('/noticeretouch',(req,res)=>{
     res.render('noticeretouch',{row:row[0]});
   })
 })
-
-// 공지사항 수정값 db에 저장
-router.post('/noticeretouch',(req,res)=>{
+// // 공지사항 수정값 db에 저장
+router.post('/noticeretouchdata',(req,res)=>{
   let param = JSON.parse(JSON.stringify(req.body));
-  let title = param['title'];
-  console.log(title);
+  let id = param['id'];
   let impo = param['impo'];
-  console.log(impo);
+  let title = param['title'];
   let exposure = param['exposure'];
-  console.log(exposure);
   let author = param['author'];
-  console.log(author);
   let authorpw = param['authorpw'];
-  console.log(authorpw);
   let notcon = param['notcon'];
-  console.log(notcon);
-  res.render('detailsnotice.ejs',{'data':param});
+  db.updateNotice(id,impo,title,exposure,author,authorpw,notcon,()=>{
+    res.redirect('/notice');
+  })
 })
+
 //공지사항 리스트에서 쿼리 id로  삭제 할 때 
 router.get('/deleteNoticeList',(req,res)=>{
   let id = req.query.id;

@@ -52,6 +52,7 @@
                             <% let regisYear =  row.create_time.getFullYear();  %>
                             <% let regisMonth =  row.create_time.getMonth()+1;  %>
                             <% let regisDate =  row.create_time.getDate();  %>
+                            <% console.log(rows.length);  %>
                             <tr>
                                 <td class="notice_info"><%= rows.length - index %></td>
                                 <td class="notice_info info_title"><a href="/detailsnotice?id=<%= row.id %>"><%= row.noticeTitle %></a></td>
@@ -76,7 +77,7 @@
             <!-- 목록 번호박스 -->
             <div class="n_numbox_wrap">
                 <ul>
-                    <li><a href="">1</a></li>&nbsp;
+                    <li><a href="/notice">1</a></li>&nbsp;
                     <li><a href="">2</a></li>&nbsp;
                     <li><a href="">3</a></li>&nbsp;
                     <li><a href="">4</a></li>

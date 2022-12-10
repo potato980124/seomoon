@@ -90,9 +90,5 @@ function Validation() {
     } else{ //형식이 올바르면 생년월일 자동으로 입력하기
         
     }
+    document.joinsubmit.submit();
 }
-
-let joinBtn = document.querySelector('.join_btn');
-joinBtn.addEventListener('click', () => {
-Validation();
-}) 
