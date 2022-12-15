@@ -1,0 +1,96 @@
+<main class="photolist_main">
+    <!-- 섹션1 메뉴 타이틀,메뉴바 시작 -->
+    <div class="subpage_menubar">
+        <div class="subpage_menutitle introbg">
+            <h2>참여마당</h2>
+            <p>단순한 스트리트마켓이 아니다!글로벌하게 먹고, 마시고, 즐길 수 있는 대한민국 No.1 야시장</p>
+        </div>
+        <div class="subpage_list_menu">
+            <ul>
+                <li><a href="/notice">공지사항</a></li>
+                <li><a href="">행사안내</a></li>
+                <li><a href="/photolist">현장스케치</a></li>
+                <li><a href="">언론보도</a></li>
+                <li><a href="">문의 및 제안</a></li>
+                <li><a href="">입점신청</a></li>
+            </ul>
+        </div>
+        <!-- 섹션2 현장스케치 타이틀,게시판시작 -->
+        <section class="subpage_cont w1100">
+            <div class="subpage_con_title">
+                <h1>현장스케치</h1>
+                <ul>
+                    <li class="homepage"></li>
+                    <li class="location">참여마당</li>
+                    <li class="location">현장스케치
+                    <li>
+                </ul>
+            </div>
+            <!-- 현장스케치 리스트 시작 -->
+
+            <div class="photolist_board">
+                <div class="photolist">
+                    <ul class="photolist_post_wrap">
+                        <% rows.forEach((row,index) =>{ %> 
+                            <% let regisYear =  row.create_time.getFullYear();  %>
+                            <% let regisMonth =  row.create_time.getMonth()+1;  %>
+                            <% let regisDate =  row.create_time.getDate();  %>
+                        <li>
+                            <div class="photolist_post_img">
+                                <a href="/detailphoto?id=<%= row.id %>">
+                                    <div class="photolist_bg" style="background-image: url(<%=row.gallerlyImg%>);"></div>
+                                </a>
+                            </div>
+                            <div class="photolist_post_tit">
+                                <a href="/detailphoto?id=<%= row.id %>"><%=row.galleryTitle%></a>
+                            </div>
+                            <div class="photolist_post_subtit">
+                                <span><strong>작성일:</strong><%=regisYear%>.<%=regisMonth%>.<%=regisDate%></span>
+                                <span><strong>조회수:</strong><%=row.joinNum%></span>
+                            </div>
+                        </li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+             <!-- 버튼박스 -->
+             <div class="subpage_btnbox_wrap">
+                <div class="subpagelist_btnbox">
+                    <a href="/photowrite">등록</a>
+                </div>
+                <div class="subpagelist_btnbox">
+                    <a href="">목록</a>
+                </div>
+            </div>
+            <!-- 목록 번호박스 -->
+            <div class="subpage_numbox_wrap">
+                <ul>
+                    <li><a href="">1</a></li>&nbsp;
+                    <li><a href="">2</a></li>&nbsp;
+                    <li><a href="">3</a></li>&nbsp;
+                    <li><a href="">4</a></li>
+                </ul>
+            </div>
+            <!-- 검색 박스 -->
+            <div class="subpage_search_wrap">
+                <form action="">
+                    <ul>
+                        <li id="subpage_search_box">
+                            <select name="" id="">
+                                <option value="">제목</option>
+                                <option value="">내용</option>
+                            </select>
+                        </li>
+                        <li id="subpage_input_box">
+                            <input type="text" id="">
+                        </li>
+                        <li id="subpage_search_clickbox">
+                            <button id="" type="submit">
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+    </div>
+</main>

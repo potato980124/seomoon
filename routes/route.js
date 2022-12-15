@@ -1,14 +1,15 @@
 const { json } = require('body-parser');
 const express = require('express');
-const { write } = require('fs');
+const fs = require('fs');
 const router = express.Router();
+const multer = require('multer');
 const path = require('path');
 const db = require('./../db.js');
 
 
 router.get('/',(req,res)=>{
-  db.getNoticeAtMain((rows)=>{
-    res.render('index',{rows:rows});
+  db.getDbAtMain((rowNoice,rowPhoto)=>{
+    res.render('index',{rowNoice:rowNoice,rowPhoto:rowPhoto});
   })
 })
 router.get('/introsub',(req,res)=>{
@@ -45,6 +46,20 @@ router.post('/joinInfo',(req,res)=>{
     res.redirect('/login');
   })
 })
+// 파일 업로드 할 때 
+const upload = multer({
+  storage: multer.diskStorage({
+    destination(req, file, done) {
+      done(null, '../public/uploads/');
+    },
+    filename(req, file, done) {
+      const ext = path.extname(file.originalname);//파일의 확장자
+      done(null, path.basename(file.originalname, ext) + Date.now() + ext);//파일명 + 날짜 + 확장자명
+    }
+  }),
+  limits :{fileSize: 1024 * 1024 * 2} //2메가까지 업로드 가능
+})
+
 // 등록한 공지 세부사항
 router.get('/detailsnotice',(req,res)=>{
   let id = req.query.id;
@@ -115,5 +130,73 @@ router.get('/deleteNoticeList',(req,res)=>{
     res.redirect('/notice');
   })
 })
-module.exports = router;
 
+
+
+
+//포토 갤러리 시작
+//현장 스케치 리스트
+router.get('/photolist',(req,res)=>{
+  db.getPhotoList((rows)=>{
+    res.render('photolist',{rows:rows});
+  })
+})
+
+
+// 현장스케치 등록 
+router.get('/photowrite',(req,res)=>{
+  res.render('photoregis');
+})
+
+router.post('/photowrite',upload.single('imgfile'),(req,res)=>{
+  let param = JSON.parse(JSON.stringify(req.body));
+  let impo = param['impo'];
+  let title = param['title'];
+  let exposure = param['exposure'];
+  let author = param['author'];
+  let authorpw = param['authorpw'];
+  let gallerycon = param['photocon'];
+  let imgfile = 'uploads/'+req.file.filename;
+  db.insertPhotoList(title,impo,exposure,author,authorpw,gallerycon,imgfile,()=>{
+    res.redirect('/photolist');
+  })
+})
+
+// 현장스케치 세부 페이지
+router.get('/detailphoto',(req,res)=>{
+  let id = req.query.id;
+  db.getPhotoListById(id,(row)=>{
+    res.render('detailphoto',{row:row[0]});
+  })
+})
+
+//현장스케치 수정 페이지
+router.get('/photoretouch',(req,res)=>{
+  let id = req.query.id;
+  db.getPhotoListById(id,(row)=>{
+    res.render('photoretouch',{row:row[0]});
+  })
+})
+//현장스케치 수정한 내용 db 저장
+router.post('/photoretouch',upload.single('imgfile'),(req,res)=>{
+  let param = JSON.parse(JSON.stringify(req.body));
+  let id = param['id'];
+  let impo = param['impo'];
+  let title = param['title'];
+  let exposure = param['exposure'];
+  let author = param['author'];
+  let authorpw = param['authorpw'];
+  let gallerycon = param['photocon'];
+  let imgfile = 'uploads/'+req.file.filename;
+  db.photolistUpdate(id,title,impo,exposure,author,authorpw,gallerycon,imgfile,()=>{
+    res.redirect('/photolist');
+  })
+})
+//현장스케치 삭제
+router.get('/deletephotolist',(req,res)=>{
+  let id = req.query.id;
+  db.photolistDelete(id,()=>{
+    res.redirect('/photolist')
+  })
+})
+module.exports = router;

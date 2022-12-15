@@ -3,7 +3,8 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '1234',
-  database : 'seomoonnotice'
+  database : 'seomoonnotice',
+  multipleStatements: true
 });
 
 connection.connect(function(err) {
@@ -13,12 +14,14 @@ connection.connect(function(err) {
 
 
 // 공지사항 함수 시작
-// 메인페이지 공지사항 띄어줄 함수
+// 메인페이지  띄어줄 db 내용들 담은 함수
 
-function getNoticeAtMain(callback){
-    connection.query('select*from noticelist ORDER BY id desc LIMIT 3',(err,rows)=>{
+function getDbAtMain(callback){
+    connection.query('select*from noticelist ORDER BY id desc LIMIT 3;' + 'select*from photolist ORDER BY id desc LIMIT 8;',(err,rows)=>{
         if(err)throw err;
-        callback(rows);
+        let rowNoice = rows[0];
+        let rowPhoto = rows[1];
+        callback(rowNoice,rowPhoto);
     })
 }
 /* db에서 데이터 가져오는 함수 번호,제목,글쓴이,등록일,조회 */
@@ -62,6 +65,58 @@ function updateNotice(id,impo,title,exposure,author,authorpw,notcon,callback){
 }
 
 
+
+
+
+
+
+// 현장스케치 동록페이지에서 db로 보내주는 함수
+function insertPhotoList(title,impo,exposure,author,authorpw,gallerycon,imgfile,callback){
+    connection.query(`INSERT INTO photolist (galleryTitle,important,exposure,author,authorPw,galleryCon,create_time,joinNum,gallerlyImg)values('${title}','${impo}','${exposure}','${author}','${authorpw}','${gallerycon}',now(),'0','${imgfile}')`,
+    (err)=>{
+        if(err) throw err;
+        callback();
+    })
+}
+// 현장 스케치 리스트 페이지에 db 리스트 뽑아주는 함수
+function getPhotoList(callback){
+    connection.query('SELECT*FROM photolist ORDER BY id',(err,rows)=>{
+        if(err) throw err;
+        callback(rows);
+    })
+}
+
+//현장 스케치 세부 페이지에 db 데이터 뽑아주는 함수
+function getPhotoListById(id,callback){
+    connection.query(`select*from photolist where id=${id}`,(err,row)=>{
+        if(err) throw err;
+        callback(row);
+    })
+}
+
+//현장스케치 수정내용 db에 없데이트
+
+function photolistUpdate(id,title,impo,exposure,author,authorpw,gallerycon,imgfile,callback){
+    connection.query(`update photolist set galleryTitle = '${title}',important = '${impo}', exposure='${exposure}',author='${author}',authorPw = '${authorpw}',galleryCon = '${gallerycon}',create_time = now(),gallerlyImg = '${imgfile}' where id ='${id}'`,
+    (err)=>{
+        if(err)throw err;
+        callback();
+    })
+}
+//현장스케치 리스트,내용 삭제 함수
+function photolistDelete(id,callback){
+    connection.query(`delete from photolist where id ='${id}'`,(err)=>{
+        if(err)throw err;
+        callback();
+    })
+}
+
+
+
+
+
+
+
 //회원가입 정보 데이터베이스 입력 함수
 function insertJoinData(userId,userPw,userRePw,userName,userNum,userSex,userEmail,callback){
     connection.query(`insert into jointable(userId,userPw,userRpw,name,userNum,userSex,userEmail,create_time)
@@ -78,8 +133,10 @@ function loginCheck(id,pw,callback){
     })
 }
 
+
 module.exports = 
 {
-    getNotice,getNoticeAtMain,insertMemo,deleteByid,getNoticeByid,updateNotice,
-    insertJoinData,loginCheck
+    getNotice,getDbAtMain,insertMemo,deleteByid,getNoticeByid,updateNotice,
+    insertJoinData,loginCheck,insertPhotoList,getPhotoList,getPhotoListById,photolistUpdate,photolistDelete
+    
 };

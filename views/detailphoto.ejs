@@ -1,0 +1,77 @@
+ <!-- 메인시작 -->
+ <main>
+    <!-- 섹션1 메뉴 타이틀,메뉴바 시작 -->
+    <div class="menubar">
+        <div class="subpage_menutitle introbg">
+            <h2>참여마당</h2>
+            <p>단순한 스트리트마켓이 아니다!글로벌하게 먹고, 마시고, 즐길 수 있는 대한민국 No.1 야시장</p>
+        </div>
+        <div class="subpage_list_menu">
+            <ul>
+                <li><a href="">공지사항</a></li>
+                <li><a href="">행사안내</a></li>
+                <li><a href="">현장스케치</a></li>
+                <li><a href="">언론보도</a></li>
+                <li><a href="">문의 및 제안</a></li>
+                <li><a href="">입점신청</a></li>
+            </ul>
+        </div>
+    </div>
+     <!-- 섹션2 야시장 공지사항 타이틀,세부공지사항시작 -->
+     <section class="subpage_cont w1100">
+        <div class="subpage_con_title">
+            <h1>현장스케치</h1>
+            <ul>
+                <li class="homepage"></li>
+                <li class="location">참여마당</li>
+                <li class="location">현장스케치<li>
+            </ul>
+        </div>
+        <!-- 세부 게시글 -->
+        <div class="details_cont">
+            <!--  타이틀 -->
+            <div class="det_con_title">
+                <% let regisYear =  row.create_time.getFullYear();  %>
+                <% let regisMonth =  row.create_time.getMonth()+1;  %>
+                <% let regisDate =  row.create_time.getDate();  %>
+                <h1 class="det_title"><%= row.galleryTitle %></h1>
+                <ul class="det_info">
+                    <li>
+                        <h2>작성일</h2>
+                        <span><%=regisYear%>년 <%= regisMonth%>월 <%=regisDate%>일</span>
+                    </li>
+                    <li>
+                        <h2>작성자</h2>
+                        <span><%= row.author %></span>
+                    </li>
+                    <li>
+                        <h2>조회</h2>
+                        <span><%= row.joinNum %></span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 공지사항 내용 -->
+            <div class="det_cont">
+                <p><img src="<%= row.gallerlyImg%>" alt=""><br><%= row.galleryCon %></p>
+            </div>
+        </div>
+        <!-- 버튼박스 -->
+        <div class="dnot_box_wrap">
+            <div class="updown_wrap">
+                <a href=""><img src="img/listup_bt.gif" alt=""></a>
+                <a href=""><img src="img/listdown_bt.gif" alt=""></a>
+            </div>
+            <ul class="adj_box_wrap">
+                <li class="not_li_box">
+                    <input type="button" value="수정" onclick="javascript:location.href='/photoretouch?id=<%= row.id %>'">
+                </li>
+                <li class="not_li_box">
+                    <input type="button" value="삭제" onclick="javascript:location.href='/deletephotolist?id=<%= row.id %>'">
+                </li>
+                <li class="not_li_box">
+                    <input type="button" value="목록" onclick="location.href='/photolist'">
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>

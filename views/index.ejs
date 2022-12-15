@@ -21,7 +21,7 @@
                 <div class="notice">
                     <h1 class="pont20">공지사항</h1>
                     <ul class="n_cont pont14">
-                        <% rows.forEach((row)=>{ %>
+                        <% rowNoice.forEach((row)=>{ %>
                         <li><a href=""><%= row.noticeTitle%></a></li>
                         <% });%>
                     </ul>
@@ -44,7 +44,7 @@
                 <ul>
                     <li class="menu menu1">
                         <div class="under_bg">
-                            <a href="">
+                            <a href="/introsub">
                                 <div class="menu_txt_wrap">
                                     <h1>야시장안내</h1>
                                     <p>
@@ -202,17 +202,12 @@
                     <h4>서문야시장 활동사진을<br>
                         확인하실 수 있습니다.
                     </h4>
-                    <div class="p_more"><a href="">더보기</a></div>
+                    <div class="p_more"><a href="/photolist">더보기</a></div>
                 </div>
                 <div class="p_slides">
-                    <div class="p_slide first"><img class="first" src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
-                    <div class="p_slide"><img src="img/menu1.jpg" alt=""></div>
-                    <div class="p_slide"><img src="img/menu2.jpg" alt=""></div>
-                    <div class="p_slide"><img src="img/menu3.jpg" alt=""></div>
-                    <div class="p_slide"><img src="img/menu4.jpg" alt=""></div>
-                    <div class="p_slide"><img src="img/night-market-671072_640.jpg" alt=""></div>
-                    <div class="p_slide"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049839_2059_600x450.jpg" alt=""></div>
-                    <div class="p_slide last"><img src="img/thumb-e6157e4b7d8becf4c1bf93028b69d46d_1496049803_5923_600x450.jpg" alt=""></div>
+                    <% rowPhoto.forEach((row)=>{ %>
+                    <div class="p_slide first"><img class="first" src="<%=row.gallerlyImg%>" alt=""></div>
+                    <% });%>
                 </div>
                 <div class="p_btn_wrap">    
                     <div class="p_prev_btn slide_btn"><img src="img/btn_mphoto_prev.gif" alt=""></div>
@@ -242,8 +237,8 @@
                 </a></li>
             </ul>
         </section>
-        <!-- 섹션5 배너 시작 -->
-        <section class="banner">
+         <!-- 섹션5 배너 시작 -->
+         <section class="banner">
             <div class="banner_wrap w1100">
                 <span class="b_img"><img src="img/salesman.png" alt=""></span>
                 <div class="b_con_wrap">
@@ -256,13 +251,4 @@
                 </div>
             </div>
         </section>  
-        <!-- 섹션 6 패밀리 사이트 시작 -->
-        <section class="fam_banner">
-            <ul class="fbanner_inner w1100">
-                <li><a href=""><img src="img/footer_banner01.jpg" alt=""></a></li>
-                <li><a href=""><img src="img/footer_banner02.jpg" alt=""></a></li>
-                <li><a href=""><img src="img/footer_banner03.jpg" alt=""></a></li>
-                <li><a href=""><img src="img/footer_banner05.jpg" alt=""></a></li>
-            </ul>
-        </section>
     </main>
