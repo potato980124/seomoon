@@ -22,7 +22,7 @@
                     <h1 class="pont20">공지사항</h1>
                     <ul class="n_cont pont14">
                         <% rowNoice.forEach((row)=>{ %>
-                        <li><a href=""><%= row.noticeTitle%></a></li>
+                        <li><a href="/detailsnotice?id=<%=row.id%>"><%= row.noticeTitle%></a></li>
                         <% });%>
                     </ul>
                     <a href="/notice" class="n_more pont12">MORE</a>

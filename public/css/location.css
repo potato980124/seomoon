@@ -1,0 +1,148 @@
+/* <!-- 매대위치 컨텐츠 시작 --> */
+.store_location{
+    width: 100%;
+}
+/* 매대 지도 */
+.location_map_bg{
+    position: relative;
+    width: 1100px; height: 600px;
+    background: url(../img/location_minimap.PNG);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.location_map_bg .map_pin_point{
+    width: 70px; height: 70px;
+    background-image: url(../img/minimap_chat.png);
+    background-size: cover;
+    position: absolute;
+    right: 40px; bottom: 270px;
+    font-size: 12px;
+    display: inline-block;
+}
+.location_map_bg .map_pin_point>span{
+    color: #cbcbcb;
+}
+
+/* 웹용 매대 정보 리스트*/
+.shop_list{
+    margin-top: 50px;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.shop_list>table{
+    width: 100%;
+}
+.shop_list tr{
+    border-bottom: 1px solid;
+}
+.shop_list tr.last{
+    border-bottom: 0;
+}
+.shop_list td img{
+    width: 100%;
+    vertical-align: bottom;
+}
+.shop_list td{
+    vertical-align: middle;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+.shop_list table td.left_td{
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+.shop_list table td h3{
+    font-size: 25px; font-weight: bold;
+}
+.shop_list table td span{
+    font-weight: 200;
+}
+.shop_list table a{
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    border: 1px solid;
+    font-size: 18px; font-weight: 400;
+    text-align: center;
+}
+
+/*웹용 모바일 공통 매대정보 리스트 페이징 박스 */
+.shop_list .paging{
+    padding-top: 50px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.shop_list .paging a{
+    display: inline-block;
+    width: 50px; height: 50px;
+    border: 1px solid #cbcbcb;
+    line-height: 50px;
+    margin-right: 1px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.shop_list .paging>a.preview{
+    background-image: url(../img/paging_pre.png);
+    text-indent: -9999px;
+    margin-right: 50px;
+}
+.shop_list .paging>a.next{
+    background-image: url(../img/paging_next.png);
+    text-indent: -99999px;
+    margin-left: 50px;
+}
+
+/* 모바일용 매대 정보 리스트 */
+.shop_list.mobile{
+    display: none;
+}
+.shop_list .cont_box{
+    text-align: center;
+}
+.shop_list .cont_box>li{
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+/* 반응형 */
+@media(max-width:736px) {
+    /* 웹용 매대 정보 리스트*/
+ .shop_list.web{
+    display: none;
+ }
+ .shop_list{
+    margin-top: 50px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.shop_list td img{
+    width: 280px; height: 180px; 
+}
+
+
+/* 모바일용 매대 정보 리스트 */
+ .shop_list.mobile{
+    display: block;
+}
+
+
+/*웹용 모바일 공통 매대정보 리스트 페이징 박스 */
+.shop_list .paging a{
+    width: 25px; height: 25px;
+    border: 1px solid #cbcbcb;
+    line-height: 25px;
+    margin-right: 1px;
+}
+.shop_list .paging>a.preview{
+    background-image: url(../img/paging_pre.png);
+    text-indent: -9999px;
+    margin-right: 25px;
+}
+.shop_list .paging>a.next{
+    background-image: url(../img/paging_next.png);
+    text-indent: -99999px;
+    margin-left: 25px;
+}
+}

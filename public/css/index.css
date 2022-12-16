@@ -1,7 +1,8 @@
 /* 공통 */
 .p60 {
     /* 좌우패딩 60px */
-    padding: 0 60px;
+    padding-left: 60px;
+    padding-right: 60px;
     box-sizing: border-box;
 }
 
@@ -562,7 +563,7 @@ header {
 }
 
 .s_m_more {
-    font-size: 15px;
+    font-size: 18px;
     padding-right: 30px;
     box-sizing: border-box;
     background-image: url(../img/btn_more.png);
@@ -660,13 +661,13 @@ header {
 }
 
 .p_more>a {
+    font-size: 18px;
     padding-right: 30px;
     box-sizing: border-box;
     background-image: url(../img/btn_mphoto_more.png);
     background-position: right;
     background-repeat: no-repeat;
     color: #fff;
-    font-size: 15px;
 }
 
 .p_slides {

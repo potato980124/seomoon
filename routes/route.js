@@ -12,9 +12,20 @@ router.get('/',(req,res)=>{
     res.render('index',{rowNoice:rowNoice,rowPhoto:rowPhoto});
   })
 })
+//야시장 안내 페이지
 router.get('/introsub',(req,res)=>{
   res.render('introsub');
 })
+//야시장 매대위치 페이지
+router.get('/locationsub',(req,res)=>{
+  res.render('location');
+})
+
+
+
+
+
+//로그인페이지
 router.get('/login',(req,res)=>{
   res.render('login');
 })
@@ -30,6 +41,7 @@ router.post('/loginInfo',(req,res)=>{
     }
   })
 })
+//회원가입페이지
 router.get('/join',(req,res)=>{
   res.render('join');
 })
@@ -46,6 +58,12 @@ router.post('/joinInfo',(req,res)=>{
     res.redirect('/login');
   })
 })
+
+
+
+
+
+
 // 파일 업로드 할 때 
 const upload = multer({
   storage: multer.diskStorage({
