@@ -3,26 +3,14 @@
     width: 100%;
 }
 /* 매대 지도 */
-.location_map_bg{
+.store_location .location_map_bg{
     position: relative;
     width: 1100px; height: 600px;
     background: url(../img/location_minimap.PNG);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
 }
 
-.location_map_bg .map_pin_point{
-    width: 70px; height: 70px;
-    background-image: url(../img/minimap_chat.png);
-    background-size: cover;
-    position: absolute;
-    right: 40px; bottom: 270px;
-    font-size: 12px;
-    display: inline-block;
-}
-.location_map_bg .map_pin_point>span{
-    color: #cbcbcb;
-}
 
 /* 웹용 매대 정보 리스트*/
 .shop_list{
@@ -34,10 +22,7 @@
     width: 100%;
 }
 .shop_list tr{
-    border-bottom: 1px solid;
-}
-.shop_list tr.last{
-    border-bottom: 0;
+    border-bottom: 1px solid #cbcbcb;
 }
 .shop_list td img{
     width: 100%;
@@ -105,6 +90,22 @@
     padding-top: 30px;
     box-sizing: border-box;
 }
+
+
+ /* 매대 등록 버튼 */
+.store_location .regis_btn_wrap{
+    display: flex;
+    justify-content: end;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+.store_location .regis_btn_wrap>a{
+    color: #fff;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    background-color: #885A2A;   
+}
+
 
 /* 반응형 */
 @media(max-width:736px) {
