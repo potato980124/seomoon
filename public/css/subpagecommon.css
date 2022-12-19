@@ -260,17 +260,54 @@
         box-sizing: border-box;
     }
 }
+
 @media(max-width:736px) {
 
     /* 서브페이지 공통 클래스 */
     .sub_p60 {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
         box-sizing: border-box;
     }
+
+    /* 버튼메뉴 */
+    .subpage_btnbox_wrap {
+        justify-content: center;
+    }
+
+    /* 검색박스 */
+
+
+
+
+    #subpage_search_box {
+        width: 60px;
+    }
+
+
+    #subpage_input_box {
+        width: 170px;
+    }
+
+    #subpage_search_clickbox {
+        width: 40px;
+        height: 40px;
+    }
+
+    /*세부페이지 버튼박스!!!! */
+
+    .dnot_box_wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .updown_wrap{
+        margin-bottom: 30px;
+    }
 }
+
 @media(max-width:375px) {
 
     /* 서브페이지 공통 클래스 */
-    
+
 }

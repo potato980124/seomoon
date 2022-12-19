@@ -1,0 +1,71 @@
+/* 오시는길 컨텐츠 시작 */
+/* 마켓주소 */
+.direction .market_info{
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: 500;
+}
+.direction .market_info>li{
+    padding-left: 32px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+.direction .market_info>li:nth-child(1){
+    background-image: url(../img/icon_address.gif);
+}
+.direction .market_info>li:nth-child(2){
+    background-image: url(../img/icon_call.gif);
+}
+
+/* 마켓지도 */
+.direction .market_map{
+    margin-top: 25px;
+    width: 100%; height: 600px;
+    background-image: url(../img/market.map.PNG);
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 15px 25px 40px 0 rgba(0, 0, 0, 20%);
+}
+
+/* 교통수단 */
+.direction .Transportation_info_wrap{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+}
+.direction .Transportation_info_wrap.sub{
+    margin-top: 50px;
+}
+.direction .Transportation_info_wrap>.icon{
+    flex-shrink: 0;
+    width: 100px; height: 100px;
+}
+.direction .Transportation_info_wrap>.icon.bus_icon{
+    background-image: url(../img/icon_bus.gif);
+}
+.direction .Transportation_info_wrap>.icon.sub_icon{
+    background-image: url(../img/icon_subway.gif);
+}
+.direction .Transportation_info_wrap>li:nth-child(2){
+    padding-left: 20px;
+}
+.direction .Transportation_info_wrap>li:nth-child(2)>h3{
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 20px; font-weight: bold;
+}
+
+@media(max-width:736px){
+    /* 교통수단 */
+    .direction .Transportation_info_wrap>.icon{
+        width: 45px; height: 45px;
+        background-size: cover;
+    }
+    .direction .Transportation_info_wrap>li:nth-child(2)>h3{
+        font-size: 15px; font-weight: bold;
+    }
+    .direction .Transportation_info_wrap>li:nth-child(2)>p{
+        font-size: 13px; 
+    }
+}

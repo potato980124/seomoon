@@ -45,3 +45,9 @@
     box-sizing: border-box;
 }
 
+@media(max-width:736px){
+    .det_cont>img{
+        width: 100%;
+    }
+}
+

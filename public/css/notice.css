@@ -12,11 +12,13 @@
     padding: 15px 0;
     box-sizing: border-box;
     border-bottom: 1px solid #5b5b5b;     
-    border-top: 1px solid #e5e5e5;     
+    border-top: 1px solid #e5e5e5;
+    white-space: nowrap;     
 }
 .notice_list_main tbody td{
     padding: 15px 0;
     box-sizing: border-box;
     border-bottom: 1px solid #e5e5e5;
 }
+
 

@@ -49,3 +49,20 @@
 }
 
 
+@media(max-width:736px) {
+    .photolist_board{
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .photolist_post_wrap>li{
+        width: calc(50%);
+        padding: 30px 5px;
+        box-sizing: border-box;
+    }
+    .photolist_post_tit>a{
+        font-size: 15px;
+    }
+    .photolist_post_subtit{
+        font-size: 12px;
+    }
+}

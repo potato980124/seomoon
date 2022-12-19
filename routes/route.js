@@ -20,8 +20,14 @@ router.get('/introsub',(req,res)=>{
 router.get('/locationsub',(req,res)=>{
   res.render('location');
 })
-
-
+// 야시장 오시는길 페이지
+router.get('/direction',(req,res)=>{
+  res.render('direction');
+})
+//매대등록 페이지
+router.get('/sellerregis',(req,res)=>{
+  res.render('sellerregistration')
+})
 
 
 
