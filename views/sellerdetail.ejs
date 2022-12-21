@@ -1,0 +1,93 @@
+<main class="seller_detail">
+    <!-- 섹션1 메뉴 타이틀,메뉴바 시작 -->
+    <div class="menubar">
+        <div class="subpage_menutitle introbg">
+            <h2>참여마당</h2>
+            <p>단순한 스트리트마켓이 아니다!글로벌하게 먹고, 마시고, 즐길 수 있는 대한민국 No.1 야시장</p>
+        </div>
+        <div class="subpage_list_menu">
+            <ul>
+                <li><a href="/introsub">야시장안내</a></li>
+                <li><a href="/locationsub">매대위치</a></li>
+                <li><a href="/direction">오시는길</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 섹션2 야시장  타이틀,게시판시작 -->
+    <section class="subpage_cont w1100 sub_p60">
+        <div class="subpage_con_title">
+            <h1>매대상세정보</h1>
+            <ul>
+                <li class="homepage"></li>
+                <li class="location">야시장 소개</li>
+                <li class="location">매대위치</li>
+                <li class="location">매대상세정보</li>
+            </ul>
+        </div>
+        <!-- 매대상세정보 컨텐츠 시작 -->
+        <div class="seller_con">
+            <div class="sell_gallery">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper seller_gallery2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="sell_img img1"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="sell_img img2"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="sell_img img3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sell_btn_wrap">
+                    <div class="sell_pre_btn"><img src="img/btn_mphoto_prev.gif" alt=""></div>
+                    <div class="sell_next_btn"><img src="img/btn_mphoto_next.gif" alt=""></div>
+                </div>
+                <div thumbsSlider="" class="swiper seller_gallery">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="sell_img img1"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="sell_img img2"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="sell_img img3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sell_txt">
+                <div class="store_name">
+                    <h1>효자왕만두</h1>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".seller_gallery", {
+          loop: true,
+          spaceBetween: 20,
+          slidesPerView: 3,
+          freeMode: true,
+          watchSlidesProgress: true,
+        });
+        var swiper2 = new Swiper(".seller_gallery2", {
+          loop: true,
+          spaceBetween: 10,
+          navigation: {
+            nextEl: ".sell_next_btn",
+            prevEl: ".sell_pre_btn",
+          },
+          thumbs: {
+            swiper: swiper,
+          },
+        });
+      </script>
+</main>

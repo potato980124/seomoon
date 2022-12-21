@@ -1,10 +1,12 @@
 .sellerregis_wrap form{
+    max-width: 500px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.sellerregis_wrap div{
-    width: 80%;
+.sellerregis_wrap div{  
+    width: 100%;
     padding-bottom: 30px;
     box-sizing: border-box;
 }

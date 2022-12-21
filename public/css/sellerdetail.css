@@ -1,0 +1,65 @@
+/* 매대상세정보 컨텐츠 시작  */
+.seller_detail .seller_con {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: #ae8c68;
+}
+/* 왼쪽 갤러리 */
+.seller_detail .seller_con>.sell_gallery {
+    width: calc(50% - 25px);
+    position: relative;
+}
+
+.seller_detail .seller_con>.sell_gallery .sell_img {
+    width: 100%;
+    padding-top: 90%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.seller_detail .seller_con>.sell_gallery .sell_img.img1 {
+    background-image: url(../img/menu1.jpg);
+}
+
+.seller_detail .seller_con>.sell_gallery .sell_img.img2 {
+    background-image: url(../img/menu2.jpg);
+}
+
+.seller_detail .seller_con>.sell_gallery .sell_img.img3 {
+    background-image: url(../img/menu3.jpg);
+}
+
+.seller_gallery .swiper-slide {
+    margin-top: 20px;
+    opacity: 0.4;
+}
+
+.seller_gallery .swiper-slide-thumb-active {
+    border: 3px solid #fff;
+    box-sizing: border-box;
+    opacity: 1;
+}
+/* 왼쪽 갤러리 버튼 */
+.seller_detail .sell_btn_wrap{
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    /* transform: translateY(-50%); */
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+}
+.seller_detail .sell_btn_wrap>.sell_pre_btn>img{
+    margin-left: -50%;
+}
+.seller_detail .sell_btn_wrap>.sell_next_btn>img{
+    margin-left: 50%;
+}
+/* 오른쪽 내용 */
+.seller_detail .seller_con>.sell_txt {
+    width: calc(50% - 50px);
+    color: #fff;
+}
+

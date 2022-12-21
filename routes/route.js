@@ -28,7 +28,10 @@ router.get('/direction',(req,res)=>{
 router.get('/sellerregis',(req,res)=>{
   res.render('sellerregistration')
 })
-
+//매대 상세 페이지
+router.get('/sellerdetail',(req,res)=>{
+  res.render('sellerdetail');
+})
 
 
 //로그인페이지
