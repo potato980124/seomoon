@@ -165,6 +165,7 @@ router.get('/deleteNoticeList',(req,res)=>{
 //현장 스케치 리스트
 router.get('/photolist',(req,res)=>{
   db.getPhotoList((rows)=>{
+    console.log(rows);
     res.render('photolist',{rows:rows});
   })
 })

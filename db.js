@@ -4,8 +4,7 @@ var connection = mysql.createConnection({
   user     : 'root',
   password : '1234',
   database : 'seomoonnotice',
-  multipleStatements: true,
-  dateStrings: 'date'
+  multipleStatements: true
 });
 
 connection.connect(function(err) {

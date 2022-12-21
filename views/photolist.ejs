@@ -35,6 +35,7 @@
                             <% let regisYear =  row.create_time.getFullYear();  %>
                             <% let regisMonth =  row.create_time.getMonth()+1;  %>
                             <% let regisDate =  row.create_time.getDate();  %>
+                            <% console.log(row.create_time);%>
                         <li>
                             <div class="photolist_post_img">
                                 <a href="/detailphoto?id=<%= row.id %>">

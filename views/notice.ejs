@@ -52,8 +52,7 @@
                             <% let regisYear =  row.create_time.getFullYear();  %>
                             <% let regisMonth =  row.create_time.getMonth()+1;  %>
                             <% let regisDate =  row.create_time.getDate();  %>
-                            <!-- <% console.log(rows.length);  %> -->
-                            <tr>
+                            <tr>    
                                 <td class="notice_info"><%= rows.length - index %></td>
                                 <td class="notice_info info_title"><a href="/detailsnotice?id=<%= row.id %>"><%= row.noticeTitle %></a></td>
                                 <td class="notice_info"><%= row.author %></td>
