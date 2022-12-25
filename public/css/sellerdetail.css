@@ -1,3 +1,7 @@
+/* 스와이퍼 */
+.swiper{
+    position: static;
+}
 /* 매대상세정보 컨텐츠 시작  */
 .seller_detail .seller_con {
     display: flex;
@@ -11,6 +15,7 @@
     width: calc(50% - 25px);
     position: relative;
 }
+
 
 .seller_detail .seller_con>.sell_gallery .sell_img {
     width: 100%;
@@ -46,7 +51,6 @@
     width: 100%;
     position: absolute;
     top: 35%;
-    /* transform: translateY(-50%); */
     z-index: 9999;
     display: flex;
     justify-content: space-between;
@@ -62,4 +66,49 @@
     width: calc(50% - 50px);
     color: #fff;
 }
+
+.seller_detail .sell_txt>div{
+    margin-bottom: 20px;
+}
+.seller_detail .sell_txt>.line{
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+.seller_detail .store_food>p{
+    height: 200px;
+}
+
+
+.seller_detail .sell_txt_body{
+    border-top: 1px solid #e0e0e0;
+}
+.seller_detail .sell_txt_body>li{
+    display: flex;
+    padding: 15px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e0e0e0;
+}
+.seller_detail .sell_txt_body>li>h3{
+    text-align: center;
+    flex-grow: 0;
+    width: 20%;
+    background-image: url(../img/tab_split.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    font-weight: 500;
+}
+.seller_detail .sell_txt_body>li>p{
+    width: 80%;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+/* 카카오 api 맵 */
+
+.seller_detail #api_map{
+    width: 100%;
+    height: 500px;
+}
+
 

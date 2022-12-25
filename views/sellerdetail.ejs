@@ -26,6 +26,7 @@
         </div>
         <!-- 매대상세정보 컨텐츠 시작 -->
         <div class="seller_con">
+            <!-- 왼쪽갤러리 -->
             <div class="sell_gallery">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper seller_gallery2">
                     <div class="swiper-wrapper">
@@ -39,10 +40,10 @@
                             <div class="sell_img img3"></div>
                         </div>
                     </div>
-                </div>
-                <div class="sell_btn_wrap">
-                    <div class="sell_pre_btn"><img src="img/btn_mphoto_prev.gif" alt=""></div>
-                    <div class="sell_next_btn"><img src="img/btn_mphoto_next.gif" alt=""></div>
+                    <div class="sell_btn_wrap">
+                        <div class="sell_pre_btn"><img src="img/btn_mphoto_prev.gif" alt=""></div>
+                        <div class="sell_next_btn"><img src="img/btn_mphoto_next.gif" alt=""></div>
+                    </div>
                 </div>
                 <div thumbsSlider="" class="swiper seller_gallery">
                     <div class="swiper-wrapper">
@@ -58,12 +59,37 @@
                     </div>
                 </div>
             </div>
+            <!-- 오른쪽 내용 -->
             <div class="sell_txt">
                 <div class="store_name">
-                    <h1>효자왕만두</h1>
+                    <h2>현풍닭강정</h2>
                 </div>
-                
+                <div class="line"></div>
+                <div class="store_food">
+                    <p>맛있는 닭강정</p>
+                </div>
+                <ul class="sell_txt_body">
+                    <li>
+                        <h3>주요메뉴</h3>
+                        <p>닭강정</p>
+                    </li>
+                    <li>
+                        <h3>위치</h3>
+                        <p>부산</p>
+                    </li>
+                    <li>
+                        <h3>전화번호</h3>
+                        <p>010-3232-2121</p>
+                    </li>
+                    <li>
+                        <h3>영업시간</h3>
+                        <p>7시~8시</p>
+                    </li>
+                </ul>
             </div>
+        </div>
+        <div class="seller_map_wrap">
+            <div id="api_map"></div>
         </div>
     </section>
       <!-- Swiper JS -->
@@ -91,3 +117,5 @@
         });
       </script>
 </main>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=510d0389eb4ad0d1f43eafa3f8510baf"></script>
+<script src="js/sellermap.js"></script>
