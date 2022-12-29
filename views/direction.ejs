@@ -5,11 +5,14 @@
             <h2>야시장안내</h2>
             <p>단순한 스트리트마켓이 아니다!글로벌하게 먹고, 마시고, 즐길 수 있는 대한민국 No.1 야시장</p>
         </div>
+        <div class="m_subpage_list_tit">
+            <p>오시는길</p>
+        </div>
         <div class="subpage_list_menu">
             <ul>
-                <li><a href="/introsub">야시장안내</a></li>
-                <li><a href="/locationsub">매대위치</a></li>
-                <li><a href="/direction">오시는길</a></li>
+                <li><a href="/introsub" class="subpage_list_txt">야시장안내</a></li>
+                <li><a href="/locationsub" class="subpage_list_txt">매대위치</a></li>
+                <li><a href="/direction"class="subpage_list_txt">오시는길</a></li>
             </ul>
         </div>
     </div>
@@ -31,7 +34,9 @@
                 <li>053-256-6341</li>
             </ul>
             <!-- 마켓지도 -->
-            <div class="market_map"></div>
+            <div class="market_map">
+                <div class="find_load"><a href="https://map.kakao.com/link/to/서문야시장,35.8685199638687,128.58072584191453">야시장 오시는길 찾기</a></div>
+            </div>
             <!-- 교통수단 -->
             <ul class="Transportation_info_wrap">
                 <li class="icon bus_icon"></li>
@@ -51,4 +56,6 @@
             </ul>
         </div>
     </section>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=510d0389eb4ad0d1f43eafa3f8510baf"></script>
+    <script src="js/directionmap.js"></script>
 </main>

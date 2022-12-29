@@ -20,7 +20,7 @@ let $gnbBg = document.querySelector('.gnb_bg');
 
 $gnb.addEventListener('mouseover',()=>{
     $lnb.forEach((e)=>{
-        e.style.display = 'block';
+        // e.style.display = 'block';
         e.style.height = '300px';
     })
     $gnbBg.style.height ='300px';
@@ -30,7 +30,7 @@ $gnb.addEventListener('mouseover',()=>{
 
  $gnb.addEventListener('mouseleave',()=>{
     $lnb.forEach((e)=>{
-        e.style.display = 'none';
+        // e.style.display = 'none';
         e.style.height = '0';
     })
     $gnbBg.style.height ='0';
@@ -38,17 +38,22 @@ $gnb.addEventListener('mouseover',()=>{
 })
 
 //모바일 메뉴
+let body = document.getElementsByTagName('body');
 let $mBtn = document.querySelector('.m_menu_btn');
 let $mMenu = document.querySelector('.m_menu');
 let $blocker = document.querySelector('.mm_page_blocker');
 let $mmRemove = document.querySelector('.mm_remove');
+console.log(body);
 $mBtn.addEventListener('click',()=>{
     $mMenu.classList.add('m_menu_on');
     $blocker.style.display = 'block';
+    body[0].style.overflow = 'hidden';
+
 })
 $mmRemove.addEventListener('click',()=>{
     $mMenu.classList.remove('m_menu_on');
     $blocker.style.display = 'none';
+    body[0].style.overflow = null;
 })
 
 //모바일 아코디언

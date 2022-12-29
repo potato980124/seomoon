@@ -5,11 +5,14 @@
             <h2>야시장안내</h2>
             <p>단순한 스트리트마켓이 아니다!글로벌하게 먹고, 마시고, 즐길 수 있는 대한민국 No.1 야시장</p>
         </div>
+        <div class="m_subpage_list_tit">
+            <p>매대위치</p>
+        </div>
         <div class="subpage_list_menu">
             <ul>
-                <li><a href="/introsub">야시장안내</a></li>
-                <li><a href="/locationsub">매대위치</a></li>
-                <li><a href="/direction">오시는길</a></li>
+                <li><a href="/introsub" class="subpage_list_txt">야시장안내</a></li>
+                <li><a href="/locationsub" class="subpage_list_txt">매대위치</a></li>
+                <li><a href="/direction" class="subpage_list_txt">오시는길</a></li>
             </ul>
         </div>
     </div>
@@ -27,8 +30,18 @@
         <div class="store_location">
             <!-- 매대지도 -->
             <div class="location_map_bg"></div>
+            <!-- <p><em>지도를 클릭해주세요!</em></p>
+            <div id="clickLatlng"></div> -->
             <!-- 매대정보 리스트 -->
             <div class="shop_list web">
+                <!-- 매대 검색 박스 -->
+                <div class="shop_search_box_wrap">
+                    <div class="shop_search_txt">SEARCH</div>
+                    <div class="shop_search_box">
+                        <input id="shop_search_cont" type="text" placeholder="매대명을 검색 해주세요">
+                    </div>
+                    <div class="shop_search_btn"></div>
+                </div>
                 <table>
                     <colgroup>
                         <col width="30%">
@@ -36,64 +49,28 @@
                         <col width="20%">
                     </colgroup>
                     <tbody>
-                        <tr>
-                            <td><img src="img/menu2.jpg" alt=""></td>
+                        <%rows.forEach((row)=>{%>
+                        <tr class="shop_list_wrap">
+                            <td><img src="<%=row.storeimg%>" alt=""></td>
                             <td class="left_td">
-                                <h3>현풍닭강정</h3>
-                                <span>위치:서문야시장</span>
+                                <h3><%=row.storename%></h3>
+                                <span>메뉴:<%=row.menu%></span>
                             </td>
                             <td>
-                                <a href="/sellerdetail">상세보기</a>
+                                <a href="/sellerdetail?id=<%=row.id%>">상세보기</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td><img src="img/menu3.jpg" alt=""></td>
-                            <td class="left_td">
-                                <h3>반쎄오</h3>
-                                <span>위치:서문야시장</span>
-                            </td>
-                            <td>
-                                <a href="">상세보기</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="img/menu3-3-3.jpg" alt=""></td>
-                            <td class="left_td">
-                                <h3>무뼈닭발</h3>
-                                <span>위치:서문야시장</span>
-                            </td>
-                            <td>
-                                <a href="">상세보기</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="img/menu2.jpg" alt=""></td>
-                            <td class="left_td">
-                                <h3>해담분식</h3>
-                                <span>위치:서문야시장</span>
-                            </td>
-                            <td>
-                                <a href="">상세보기</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="img/menu2.jpg" alt=""></td>
-                            <td class="left_td">
-                                <h3>철판꽃삼겹김밥</h3>
-                                <span>위치:서문야시장</span>
-                            </td>
-                            <td>
-                                <a href="">상세보기</a>
-                            </td>
-                        </tr>
+                        <%});%>
                     </tbody>
                 </table>
+                <!-- 검색결과 없을시 -->
+                <p class="not_search">검색결과가 없습니다.</p>
                 <!-- 등록버튼 -->
                 <div class="regis_btn_wrap">
                     <a href="/sellerregis">매대등록</a>
                 </div>
                 <!-- 매대정보 리스트 페이징 박스 -->
-                <div class="paging">
+                <!-- <div class="paging">
                     <a href="" class="preview">1</a>
                     <a href="">1</a>
                     <a href="">2</a>
@@ -101,91 +78,43 @@
                     <a href="">4</a>
                     <a href="">5</a>
                     <a href="" class="next">1</a>
-                </div>
+                </div> -->
             </div>
             <!-- 모바일용 테이블 -->
             <div class="shop_list mobile">
+                <!--모바일 매대 검색 박스 -->
+                <div class="shop_search_box_wrap">
+                    <div class="shop_search_box">
+                        <input id="shop_search_cont_m" type="text" placeholder="매대명">
+                    </div>
+                    <div class="shop_search_btn" id="m_shop_search_btn"></div>
+                </div>
                 <table>
-                    <!-- <colgroup>
-                        <col width="100%">
-                    </colgroup> -->
                     <tbody>
-                        <tr>
+                        <tr class="shop_list_wrap">
                             <td>
+                                <%rows.forEach((row)=>{%>
                                 <ul class="cont_box">
-                                    <li><img src="img/menu2.jpg" alt=""></li>
+                                    <li><img src="<%=row.storeimg%>" alt=""></li>
                                     <li>
-                                        <h3>현풍닭강정</h3>
+                                        <h3 class="m_shop_title"><%=row.storename%></h3>
                                     </li>
-                                    <li><span>위치:서문야시장</span></li>
-                                    <li><a href="">상세보기</a></li>
+                                    <li><span>메뉴:<%=row.menu%></span></li>
+                                    <li><a href="/sellerdetail?id=<%=row.id%>">상세보기</a></li>
                                 </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ul class="cont_box">
-                                    <li><img src="img/menu3.jpg" alt=""></li>
-                                    <li>
-                                        <h3>반쎄오</h3>
-                                    </li>
-                                    <li><span>위치:서문야시장</span></li>
-                                    <li><a href="">상세보기</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ul class="cont_box">
-                                    <li><img src="img/menu3-3-3.jpg" alt=""></li>
-                                    <li>
-                                        <h3>무뼈닭발</h3>
-                                    </li>
-                                    <li><span>위치:서문야시장</span></li>
-                                    <li><a href="">상세보기</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ul class="cont_box">
-                                    <li><img src="img/menu2.jpg" alt=""></li>
-                                    <li>
-                                        <h3>현풍닭강정</h3>
-                                    </li>
-                                    <li><span>위치:서문야시장</span></li>
-                                    <li><a href="">상세보기</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ul class="cont_box">
-                                    <li><img src="img/menu2.jpg" alt=""></li>
-                                    <li>
-                                        <h3>현풍닭강정</h3>
-                                    </li>
-                                    <li><span>위치:서문야시장</span></li>
-                                    <li><a href="">상세보기</a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ul class="cont_box">
-                                    <li><img src="img/menu2.jpg" alt=""></li>
-                                    <li>
-                                        <h3>현풍닭강정</h3>
-                                    </li>
-                                    <li><span>위치:서문야시장</span></li>
-                                    <li><a href="">상세보기</a></li>
-                                </ul>
+                                <%});%>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <!--모바일 검색결과 없을시 -->
+                <p class="m_not_search">검색결과가 없습니다.</p>
+                <!-- 등록버튼 -->
+                <div class="regis_btn_wrap">
+                    <a href="/sellerregis">매대등록</a>
+                </div>
                 <!-- 매대정보 리스트 페이징 박스 -->
-                <div class="paging">
+                <!-- <div class="paging">
                     <a href="" class="preview">1</a>
                     <a href="">1</a>
                     <a href="">2</a>
@@ -193,8 +122,10 @@
                     <a href="">4</a>
                     <a href="">5</a>
                     <a href="" class="next">1</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 </main>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=510d0389eb4ad0d1f43eafa3f8510baf"></script>
+<script src="js/storelocation.js"></script>

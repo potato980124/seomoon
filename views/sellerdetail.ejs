@@ -2,14 +2,17 @@
     <!-- 섹션1 메뉴 타이틀,메뉴바 시작 -->
     <div class="menubar">
         <div class="subpage_menutitle introbg">
-            <h2>참여마당</h2>
+            <h2>야시장소개</h2>
             <p>단순한 스트리트마켓이 아니다!글로벌하게 먹고, 마시고, 즐길 수 있는 대한민국 No.1 야시장</p>
+        </div>
+        <div class="m_subpage_list_tit">
+            <p>매대상세정보</p>
         </div>
         <div class="subpage_list_menu">
             <ul>
-                <li><a href="/introsub">야시장안내</a></li>
-                <li><a href="/locationsub">매대위치</a></li>
-                <li><a href="/direction">오시는길</a></li>
+                <li><a href="/introsub" class="subpage_list_txt">야시장안내</a></li>
+                <li><a href="/locationsub" class="subpage_list_txt">매대위치</a></li>
+                <li><a href="/direction"class="subpage_list_txt">오시는길</a></li>
             </ul>
         </div>
     </div>
@@ -31,13 +34,13 @@
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper seller_gallery2">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="sell_img img1"></div>
+                            <div class="sell_img img1" style="background-image: url(<%=row.storeimg%>)"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="sell_img img2"></div>
+                            <div class="sell_img img2"style="background-image: url(<%=row.storeimg2%>)"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="sell_img img3"></div>
+                            <div class="sell_img img3"style="background-image: url(<%=row.storeimg3%>)"></div>
                         </div>
                     </div>
                     <div class="sell_btn_wrap">
@@ -48,13 +51,13 @@
                 <div thumbsSlider="" class="swiper seller_gallery">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="sell_img img1"></div>
+                            <div class="sell_img img1" style="background-image: url(<%=row.storeimg%>)"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="sell_img img2"></div>
+                            <div class="sell_img img2"style="background-image: url(<%=row.storeimg2%>)"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="sell_img img3"></div>
+                            <div class="sell_img img3" style="background-image: url(<%=row.storeimg3%>)"></div>
                         </div>
                     </div>
                 </div>
@@ -62,34 +65,32 @@
             <!-- 오른쪽 내용 -->
             <div class="sell_txt">
                 <div class="store_name">
-                    <h2>현풍닭강정</h2>
+                    <h2><%=row.storename%></h2>
                 </div>
                 <div class="line"></div>
                 <div class="store_food">
-                    <p>맛있는 닭강정</p>
+                    <p><%=row.storeintro%></p>
                 </div>
                 <ul class="sell_txt_body">
                     <li>
-                        <h3>주요메뉴</h3>
-                        <p>닭강정</p>
+                        <h3>메뉴</h3>
+                        <p><%=row.menu%></p>
                     </li>
                     <li>
-                        <h3>위치</h3>
-                        <p>부산</p>
+                        <h3>가격</h3>
+                        <p><%=row.menuprice%></p>
                     </li>
                     <li>
-                        <h3>전화번호</h3>
-                        <p>010-3232-2121</p>
-                    </li>
-                    <li>
-                        <h3>영업시간</h3>
-                        <p>7시~8시</p>
+                        <h3>추천메뉴</h3>
+                        <p><%=row.recomenu%></p>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="seller_map_wrap">
-            <div id="api_map"></div>
+        <!-- 수정버튼 -->
+        <div class="regis_btn_wrap">
+            <a href="/sellerretouch?id=<%=row.id%>">수정</a>
+            <a href="/deleteseller?id=<%=row.id%>">삭제</a>
         </div>
     </section>
       <!-- Swiper JS -->
@@ -98,7 +99,7 @@
       <!-- Initialize Swiper -->
       <script>
         var swiper = new Swiper(".seller_gallery", {
-          loop: true,
+          loop: false,
           spaceBetween: 20,
           slidesPerView: 3,
           freeMode: true,
@@ -117,5 +118,3 @@
         });
       </script>
 </main>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=510d0389eb4ad0d1f43eafa3f8510baf"></script>
-<script src="js/sellermap.js"></script>

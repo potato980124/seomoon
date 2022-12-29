@@ -12,26 +12,6 @@ router.get('/',(req,res)=>{
     res.render('index',{rowNoice:rowNoice,rowPhoto:rowPhoto});
   })
 })
-//야시장 안내 페이지
-router.get('/introsub',(req,res)=>{
-  res.render('introsub');
-})
-//야시장 매대위치 페이지
-router.get('/locationsub',(req,res)=>{
-  res.render('location');
-})
-// 야시장 오시는길 페이지
-router.get('/direction',(req,res)=>{
-  res.render('direction');
-})
-//매대등록 페이지
-router.get('/sellerregis',(req,res)=>{
-  res.render('sellerregistration')
-})
-//매대 상세 페이지
-router.get('/sellerdetail',(req,res)=>{
-  res.render('sellerdetail');
-})
 
 
 //로그인페이지
@@ -84,9 +64,81 @@ const upload = multer({
       done(null, path.basename(file.originalname, ext) + Date.now() + ext);//파일명 + 날짜 + 확장자명
     }
   }),
-  limits :{fileSize: 1024 * 1024 * 2} //2메가까지 업로드 가능
+  limits :{fileSize: 1024 * 1024 * 10} //2메가까지 업로드 가능 
+})
+//야시장 안내 페이지
+router.get('/introsub',(req,res)=>{
+  res.render('introsub');
+})
+//야시장 매대위치 페이지
+router.get('/locationsub',(req,res)=>{
+  db.getSellertable((rows)=>{
+    res.render('location',{rows:rows});
+  })
+})
+// 야시장 오시는길 페이지
+router.get('/direction',(req,res)=>{
+  res.render('direction');
+})
+//매대등록 페이지
+router.get('/sellerregis',(req,res)=>{
+  res.render('sellerregistration')
+})
+router.post('/sellerinfo',upload.array('storeimg',3),(req,res)=>{
+  let param = JSON.parse(JSON.stringify(req.body));
+  let storename = param['storename'];
+  let menu = param['menu'];
+  let menuprice = param['menuprice'];
+  let recomenu = param['recomenu'];
+  let storeimg = 'uploads/'+req.files[0].filename;
+  let storeimg2 = 'uploads/'+req.files[1].filename;
+  let storeimg3 = 'uploads/'+req.files[2].filename;
+  let storeintro = param['storeintro'];
+  db.insertSellerList(storename,menu,menuprice,recomenu,storeimg,storeimg2,storeimg3,storeintro,()=>{
+    res.redirect('/locationsub');
+  })
+})
+//매대 수정 페이지
+router.get('/sellerretouch',(req,res)=>{
+  let id = req.query.id;
+  db.getSellertableByid(id,(row)=>{
+    res.render('sellerretouch',{row:row[0]});
+  })
+})
+router.post('/sellerretouchinfo',upload.array('storeimg',3),(req,res)=>{
+  let param = JSON.parse(JSON.stringify(req.body));
+  let id = param['id'];
+  let storename = param['storename'];
+  let menu = param['menu'];
+  let menuprice = param['menuprice'];
+  let recomenu = param['recomenu'];
+  let storeimg = 'uploads/'+req.files[0].filename;
+  let storeimg2 = 'uploads/'+req.files[1].filename;
+  let storeimg3 = 'uploads/'+req.files[2].filename;
+  let storeintro = param['storeintro'];
+  db.updateSellertable(id,storename,menu,menuprice,recomenu,storeimg,storeimg2,storeimg3,storeintro,()=>{
+    res.redirect('/locationsub');
+  });
 })
 
+
+//매대 상세 페이지
+router.get('/sellerdetail',(req,res)=>{
+  let id = req.query.id;
+  db.getSellertableByid(id,(row)=>{
+    res.render('sellerdetail',{row:row[0]});
+  })
+})
+//매대 상세 페이지에서 해당 db 내용 삭제 
+router.get('/deleteseller',(req,res)=>{
+  let id = req.query.id;
+  db.deleteSellerByid(id,()=>{
+    res.redirect("/locationsub");
+  })
+})
+
+
+// ----- 공지----
 // 등록한 공지 세부사항
 router.get('/detailsnotice',(req,res)=>{
   let id = req.query.id;

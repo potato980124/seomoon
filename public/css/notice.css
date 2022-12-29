@@ -19,6 +19,15 @@
     padding: 15px 0;
     box-sizing: border-box;
     border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
 }
 
 
+@media(max-width:800px){
+    .notice_list_main thead td{
+        font-size: 13px;    
+    }
+    .notice_list_main tbody td{
+        font-size: 12px;
+    }
+}

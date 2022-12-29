@@ -111,10 +111,42 @@ function photolistDelete(id,callback){
     })
 }
 
+//매대 등록 페이지에서 db로 보내주는 함수
 
-
-
-
+function insertSellerList(storename,menu,menuprice,recomenu,storeimg,storeimg2,storeimg3,storeintro,callback){
+    connection.query(`INSERT INTO sellertable (storename,menu,menuprice,recomenu,storeimg,storeimg2,storeimg3,storeintro)values('${storename}','${menu}','${menuprice}','${recomenu}','${storeimg}','${storeimg2}','${storeimg3}','${storeintro}')`,(err)=>{
+        if (err) throw err;
+        callback();
+    })
+}
+//매대 정보 db에 저장된 데이터 리스트에 뽑아주는 함수
+function getSellertable(callback){
+    connection.query(`SELECT*FROM sellertable ORDER BY id`,(err,rows)=>{
+        if (err) throw err;
+        callback(rows);
+    })
+}
+//매대 상세 페이지에 프라이머리키인 id기준으로 db정보 뽑아주는 함수 
+function getSellertableByid(id,callback){
+    connection.query(`select*from sellertable where id=${id}`,(err,row)=>{
+        if(err) throw err;
+        callback(row);
+    })
+}
+// 매대 수정 페이지 정보 db에 업데이트 해주는 함수
+function updateSellertable(id,storename,menu,menuprice,recomenu,storeimg,storeimg2,storeimg3,storeintro,callback){
+    connection.query(`update sellertable set storename = '${storename}',menu = '${menu}', menuprice='${menuprice}',recomenu='${recomenu}',storeimg = '${storeimg}',storeimg2 = '${storeimg2}',storeimg3 = '${storeimg3}',storeintro = '${storeintro}' where id ='${id}'`,(err)=>{
+        if(err) throw err;
+        callback();
+    })
+}
+// 매대 상세페이지 delete 버튼 을 통해 해당 db 내용 지워주는 함수
+function deleteSellerByid(id,callback){
+    connection.query(`delete from sellertable where id ='${id}'`,(err)=>{
+        if(err) throw err;
+        callback();
+    })
+}
 
 
 //회원가입 정보 데이터베이스 입력 함수
@@ -137,6 +169,6 @@ function loginCheck(id,pw,callback){
 module.exports = 
 {
     getNotice,getDbAtMain,insertMemo,deleteByid,getNoticeByid,updateNotice,
-    insertJoinData,loginCheck,insertPhotoList,getPhotoList,getPhotoListById,photolistUpdate,photolistDelete
-    
+    insertJoinData,loginCheck,insertPhotoList,getPhotoList,getPhotoListById,photolistUpdate,photolistDelete,
+    insertSellerList,getSellertable,getSellertableByid,updateSellertable,deleteSellerByid
 };

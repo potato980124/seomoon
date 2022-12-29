@@ -105,12 +105,14 @@ header {
 
 /* lnb,bng,bg 시작 */
 .lnb {
-    display: none;
+    /* display: none; */
     position: absolute;
     top: 100px;
-    width: 100%;
+    width: fit-content;
     height: 0;
+    overflow: hidden;
     z-index: 98;
+    transition: height 0.5s;
 }
 
 .lnb>li {
@@ -121,6 +123,9 @@ header {
     font-size: 15px;
     color: #555;
     line-height: 40px;
+}
+.lnb>li>a:hover {
+    font-weight: bold;
 }
 
 .gnb_bg {
@@ -146,7 +151,7 @@ header {
 .m_menu {
     display: none;
     position: absolute;
-    z-index: 999;
+    z-index: 1001;
     right: 0;
     transform: translateX(100%);
     width: 250px;
@@ -227,7 +232,7 @@ header {
     height: 100%;
     background-color: #222;
     opacity: 0.9;
-    z-index: 998;
+    z-index: 1000;
 }
 
 /* 메인시작 */
@@ -1106,9 +1111,11 @@ footer {
     }
 
     .b_con_wrap {
+        padding-left: 0;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
 
     .b_app_box {
@@ -1116,8 +1123,7 @@ footer {
     }
 
     .b_img {
-        /* top: 5%; left: 50%;
-    transform: translateX(-50%); */
+        display: none;
     }
 
     .b_img>img {
