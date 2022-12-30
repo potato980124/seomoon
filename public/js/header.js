@@ -43,7 +43,6 @@ let $mBtn = document.querySelector('.m_menu_btn');
 let $mMenu = document.querySelector('.m_menu');
 let $blocker = document.querySelector('.mm_page_blocker');
 let $mmRemove = document.querySelector('.mm_remove');
-console.log(body);
 $mBtn.addEventListener('click',()=>{
     $mMenu.classList.add('m_menu_on');
     $blocker.style.display = 'block';
@@ -58,8 +57,14 @@ $mmRemove.addEventListener('click',()=>{
 
 //모바일 아코디언
 let $menusTit = document.querySelectorAll('.m_menus_title');
+let $menus = document.querySelectorAll('.m_menus');
 $menusTit.forEach((event)=>{
     event.addEventListener('click',function(){
+        $menus.forEach((e)=>{
+            if(e.classList.value == "m_menus m_menus_title_on" && e !== this.nextElementSibling){
+                e.classList.remove("m_menus_title_on");
+            }
+        })
         this.nextElementSibling.classList.toggle('m_menus_title_on');
     })
 })

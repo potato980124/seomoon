@@ -46,6 +46,8 @@
     all: unset;
     width: 100%;height: 100%;
     background-color: #E8F0FE;
+    padding: 0 5px;
+    box-sizing: border-box;
 }
 .delete>button{
     all: unset;
@@ -74,3 +76,17 @@
 }
 
 
+@media(max-width:470px){
+    .loginall_wrap{
+        margin: 0 auto;
+        width: 360px;
+    }
+    .login_type>li{
+        width: 50%;
+        text-align: center;
+        padding: 20px ;
+        border: 1px solid #C6C6C6;
+        box-sizing: border-box;
+        font-size: 16px;font-weight: bold; letter-spacing: -2px;
+    }
+}
