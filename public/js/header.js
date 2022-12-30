@@ -60,7 +60,6 @@ $mmRemove.addEventListener('click',()=>{
 let $menusTit = document.querySelectorAll('.m_menus_title');
 $menusTit.forEach((event)=>{
     event.addEventListener('click',function(){
-        console.log(this.nextElementSibling);
         this.nextElementSibling.classList.toggle('m_menus_title_on');
     })
 })
