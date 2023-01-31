@@ -12,7 +12,7 @@
     display: flex;
 }
 .login_type>li{
-    width: 50%;
+    width: 100%;
     text-align: center;
     padding: 20px ;
     border: 1px solid #C6C6C6;
