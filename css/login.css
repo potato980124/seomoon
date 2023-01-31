@@ -1,0 +1,92 @@
+
+
+/* 로그인섹션시작 */
+.login{
+    margin: 250px 0;
+}
+.loginall_wrap{
+    margin: 0 auto;
+    width: 460px;
+}
+.login_type{
+    display: flex;
+}
+.login_type>li{
+    width: 100%;
+    text-align: center;
+    padding: 20px ;
+    border: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    font-size: 18px;font-weight: bold; letter-spacing: -2px;
+}
+.login_type>li:nth-child(2){
+    border-left: 0;
+}
+.login_input{
+    border: 1px solid #C6C6C6;
+    padding: 30px 30px;
+    box-sizing: border-box;
+}
+.login_wrap{
+    margin-bottom: 55px;
+}
+.login_wrap>ul{
+    display: flex;
+    border: 1px solid #C6C6C6;
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+
+.input_box{
+    padding: 0 10px;
+    box-sizing: border-box;
+    width: 90%;
+}
+.input_box>input{
+    all: unset;
+    width: 100%;height: 100%;
+    background-color: #E8F0FE;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+.delete>button{
+    all: unset;
+}
+
+.login_btn{
+    width: 100%;
+    padding: 25px 0;
+    background-color: #373131;
+    color: #fff;
+    font-size: 20px; font-weight: bold;
+    text-align: center;
+}
+
+.log_under_menu{
+    margin-top: 20px; margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+.log_under_menu>li{
+    padding: 0 10px;
+}
+.log_under_menu>li:nth-child(2){
+    border-left: 1px solid #C6C6C6;
+    border-right: 1px solid #C6C6C6;
+}
+
+
+@media(max-width:470px){
+    .loginall_wrap{
+        margin: 0 auto;
+        width: 360px;
+    }
+    .login_type>li{
+        width: 50%;
+        text-align: center;
+        padding: 20px ;
+        border: 1px solid #C6C6C6;
+        box-sizing: border-box;
+        font-size: 16px;font-weight: bold; letter-spacing: -2px;
+    }
+}
