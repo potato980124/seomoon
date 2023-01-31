@@ -151,9 +151,8 @@ function deleteSellerByid(id,callback){
 
 //회원가입 정보 데이터베이스 입력 함수
 function insertJoinData(userId,userPw,userRePw,userName,userNum,userSex,userEmail,callback){
-    connection.query(`insert into jointable(userId,userPw,userRpw,name,userNum,userSex,userEmail,create_time)
-    values('${userId}','${userPw}','${userRePw}','${userName}','${userNum}','${userSex}','${userEmail}',now())`,(err)=>{
-        if(err) throw err;
+    connection.query(`insert into jointable(userId,userPw,userRpw,name,userNum,userSex,userEmail,create_time)values('${userId}','${userPw}','${userRePw}','${userName}','${userNum}','${userSex}','${userEmail}',now())`,(err)=>{
+        if(err) throw err; 
         callback();
     })
 }
