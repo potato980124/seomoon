@@ -90,10 +90,19 @@ router.post('/sellerinfo',upload.array('storeimg',3),(req,res)=>{
   let menu = param['menu'];
   let menuprice = param['menuprice'];
   let recomenu = param['recomenu'];
-  let storeimg = 'uploads/'+req.files[0].filename;
-  let storeimg2 = 'uploads/'+req.files[1].filename;
-  let storeimg3 = 'uploads/'+req.files[2].filename;
+  let storeimg = '';
+  let storeimg2 = '';
+  let storeimg3 = '';
   let storeintro = param['storeintro'];
+  for (let i = 0; i < req.files.length; i++) {
+    if(req.files[i] && req.files[i].filename && i==0){
+      storeimg = 'uploads/'+req.files[i].filename;
+    } else if(req.files[i] && req.files[i].filename && i==1){
+      storeimg2 = 'uploads/'+req.files[i].filename;
+    } else if(req.files[i] && req.files[i].filename && i==2){
+      storeimg3 = 'uploads/'+req.files[i].filename;
+    }
+  }
   db.insertSellerList(storename,menu,menuprice,recomenu,storeimg,storeimg2,storeimg3,storeintro,()=>{
     res.redirect('/locationsub');
   })
@@ -236,7 +245,10 @@ router.post('/photowrite',upload.single('imgfile'),(req,res)=>{
   let author = param['author'];
   let authorpw = param['authorpw'];
   let gallerycon = param['photocon'];
-  let imgfile = 'uploads/'+req.file.filename;
+  let imgfile = '';
+  if (req.file && req.file.filename) {
+    imgfile = 'uploads/'+req.file.filename;
+  }
   db.insertPhotoList(title,impo,exposure,author,authorpw,gallerycon,imgfile,()=>{
     res.redirect('/photolist');
   })
@@ -267,7 +279,9 @@ router.post('/photoretouch',upload.single('imgfile'),(req,res)=>{
   let author = param['author'];
   let authorpw = param['authorpw'];
   let gallerycon = param['photocon'];
-  let imgfile = 'uploads/'+req.file.filename;
+  if (req.file && req.file.filename) {
+    imgfile = 'uploads/'+req.file.filename;
+  }
   db.photolistUpdate(id,title,impo,exposure,author,authorpw,gallerycon,imgfile,()=>{
     res.redirect('/photolist');
   })
