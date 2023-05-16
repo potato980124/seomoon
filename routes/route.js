@@ -57,7 +57,7 @@ router.post('/joinInfo',(req,res)=>{
 const upload = multer({
   storage: multer.diskStorage({
     destination(req, file, done) {
-      done(null, '../public/uploads/');
+      done(null, path.resolve(__dirname, '../public/uploads/'));
     },
     filename(req, file, done) {
       const ext = path.extname(file.originalname);//파일의 확장자
