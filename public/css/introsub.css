@@ -1,4 +1,9 @@
 /* <!-- 섹션2 야시장 소개 시작 --> */
+.intro_market .test_link{
+    color: brown;
+    font-weight: bold;
+    font-size: 20px;
+}
 .intro_market .guide_con {
     display: flex;
     justify-content: space-between;
