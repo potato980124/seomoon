@@ -13,7 +13,9 @@ router.get('/',(req,res)=>{
   })
 })
 
-
+router.get('/joinsuc',(req,res)=>{
+  res.render('joinsuc');
+})
 //로그인페이지
 router.get('/login',(req,res)=>{
   res.render('login');
@@ -44,7 +46,7 @@ router.post('/joinInfo',(req,res)=>{
   let userSex = param['sex'];
   let userEmail = param['email'];
   db.insertJoinData(userId,userPw,userRePw,userName,userNum,userSex,userEmail,()=>{
-    res.redirect('/login');
+    res.redirect('/joinsuc');
   })
 })
 
